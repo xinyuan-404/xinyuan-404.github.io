@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>TCP/IP协议 | Xinyuan's blog</title><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="TCP&#x2F;IP协议TCP&#x2F;IP 协议的具体含义从字面意义上讲，有人可能会认为 TCP&#x2F;IP 是指 TCP 和 IP 两种协议。实际生活当中有时也确实就是指这两种协议。然而在很多情况下，它只是利用 IP 进行通信时所必须用到的协议群的统称。具体来说，IP 或 ICMP、TCP 或 UDP、TELNET 或 FTP、以及 HTTP 等都属于 TCP&#x2F;IP 协议。他们与 TCP 或 IP 的关系紧密，是互">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP&#x2F;IP协议">
+<meta property="og:url" content="http://example.com/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="TCP&#x2F;IP协议TCP&#x2F;IP 协议的具体含义从字面意义上讲，有人可能会认为 TCP&#x2F;IP 是指 TCP 和 IP 两种协议。实际生活当中有时也确实就是指这两种协议。然而在很多情况下，它只是利用 IP 进行通信时所必须用到的协议群的统称。具体来说，IP 或 ICMP、TCP 或 UDP、TELNET 或 FTP、以及 HTTP 等都属于 TCP&#x2F;IP 协议。他们与 TCP 或 IP 的关系紧密，是互">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tcpphoto.com/wp-content/uploads/cropped-TCP-Favicon.png">
+<meta property="article:published_time" content="2021-11-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-26T15:53:13.341Z">
+<meta property="article:author" content="鑫缘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tcpphoto.com/wp-content/uploads/cropped-TCP-Favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'TCP/IP协议',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-26 23:53:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tcpphoto.com/wp-content/uploads/cropped-TCP-Favicon.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">TCP/IP协议</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-24T16:00:00.000Z" title="发表于 2021-11-25 00:00:00">2021-11-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-26T15:53:13.341Z" title="更新于 2021-11-26 23:53:13">2021-11-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="TCP/IP协议"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><h2 id="TCP-IP-协议的具体含义"><a href="#TCP-IP-协议的具体含义" class="headerlink" title="TCP/IP 协议的具体含义"></a>TCP/IP 协议的具体含义</h2><p>从字面意义上讲，有人可能会认为 TCP/IP 是指 TCP 和 IP 两种协议。实际生活当中有时也确实就是指这两种协议。然而在很多情况下，它只是利用 IP 进行通信时所必须用到的<strong>协议群的统称</strong>。具体来说，IP 或 ICMP、TCP 或 UDP、TELNET 或 FTP、以及 HTTP 等都属于 TCP/IP 协议。他们与 TCP 或 IP 的关系紧密，是互联网必不可少的组成部分。TCP/IP 一词泛指这些协议，因此，有时也称 TCP/IP 为网际协议群。<br>互联网进行通信时，需要相应的网络协议，TCP/IP 原本就是为使用互联网而开发制定的协议族。因此，互联网的协议就是 TCP/IP，TCP/IP 就是互联网的协议。</p>
+<p><strong>计算机网络体系结构分层</strong></p>
+<img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/11/11/690219fae5b0587fa26e2dee545e6200~tplv-t2oaga2asx-watermark.awebp" alt="计算机网络体系结构分层" style="zoom:150%;" />
+
+<p>TCP/IP协议族按照层次<strong>由上到下，层层包装</strong>。最上面的是应用层，这里面有http，ftp,等等我们熟悉的协议。而第二层则是传输层，著名的TCP和UDP协议就在这个层次。第三层是网络层，IP协议就在这里，它负责对数据加上IP地址和其他的数据以确定传输的目标。第四层是数据链路层，这个层次为待传送的数据加入一个以太网协议头，并进行CRC编码，为最后的数据传输做准备。<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/8/10/32269df6363944b0df8fe99204e92c91~tplv-t2oaga2asx-watermark.awebp" alt="img"></p>
+<blockquote>
+<p>上图清楚地表示了TCP/IP协议中每个层的作用，而TCP/IP协议通信的过程其实就对应着数据入栈与出栈的过程。入栈的过程，数据发送方每层不断地封装首部与尾部，添加一些传输的信息，确保能传输到目的地。出栈的过程，数据接收方每层不断地拆除首部与尾部，得到最终传输的数据。</p>
+</blockquote>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/8/10/7f693d4add34644a6268e0e11bec2cb7~tplv-t2oaga2asx-watermark.awebp" alt="img"></p>
+<h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><p>IP协议是TCP/IP协议的核心，所有的TCP，UDP，IMCP，IGMP的数据都以IP数据格式传输。要注意的是，IP不是可靠的协议，这是说，IP协议没有提供一种数据未传达以后的处理机制，这被认为是上层协议：TCP或UDP要做的事情。</p>
+<h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>在数据链路层中我们一般通过MAC地址来识别不同的节点，而在IP层我们也要有一个类似的地址标识，这就是IP地址。</p>
+<p>32位IP地址分为网络位和地址位，这样做可以减少路由器中路由表记录的数目，有了网络地址，就可以限定拥有相同网络地址的终端都在同一个范围内，那么路由表只需要维护一条这个网络地址的方向，就可以找到相应的这些终端了。</p>
+<p> A类IP地址: 0.0.0.0<del>127.0.0.0<br>B类IP地址:128.0.0.1</del>191.255.0.0<br>C类IP地址:192.168.0.0~239.255.255.0</p>
+<h3 id="IP协议头"><a href="#IP协议头" class="headerlink" title="IP协议头"></a>IP协议头</h3><p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2017/8/10/dbb082d9806de01f5653423917a1f71b~tplv-t2oaga2asx-watermark.awebp" alt="img"></p>
+<p>这里只介绍:八位的TTL字段。这个字段规定该数据包在穿过多少个路由之后才会被抛弃。某个IP数据包每穿过一个路由器，该数据包的TTL数值就会减少1，当该数据包的TTL成为零，它就会被自动抛弃。<br>这个字段的最大值也就是255，也就是说一个协议包也就在路由器里面穿行255次就会被抛弃了，根据系统的不同，这个数字也不一样，一般是32或者是64。</p>
+<h2 id="传输层中的-TCP-和-UDP"><a href="#传输层中的-TCP-和-UDP" class="headerlink" title="传输层中的 TCP 和 UDP"></a>传输层中的 TCP 和 UDP</h2><p>TCP/IP 中有两个具有代表性的传输层协议，分别是 TCP 和 UDP。</p>
+<blockquote>
+<p>他们的目标都是在程序之间传输数据。<br>数据可以是文本，文件，可以是视频，也可以是图片。对于TCP协议和UDP协议来说，都是一对二进制数，并没有多大的区别。</p>
+</blockquote>
+<p><strong>TCP 是面向连接的、可靠的流协议。</strong>流就是指不间断的数据结构，当应用程序采用 TCP 发送消息时，虽然可以保证发送的顺序，但还是犹如没有任何间隔的数据流发送给接收端。TCP 为提供可靠性传输，实行“顺序控制”或“重发控制”机制。此外还具备“流控制（流量控制）”、“拥塞控制”、提高网络利用率等众多功能。</p>
+<p><strong>UDP 是不具有可靠性的数据报协议。</strong>细微的处理它会交给上层的应用去完成。在 UDP 的情况下，虽然可以确保发送消息的大小，却不能保证消息一定会到达。因此，应用有时会根据自己的需要进行重发处理。</p>
+<p>TCP 和 UDP 的优缺点无法简单地、绝对地去做比较：TCP 用于在传输层有必要实现可靠传输的情况；而在一方面，UDP 主要用于那些对高速传输和实时性有较高要求的通信或广播通信。<strong>TCP 和 UDP 应该根据应用的目的按需使用。</strong></p>
+<h2 id="TCPUDP之间的区别是什么？"><a href="#TCPUDP之间的区别是什么？" class="headerlink" title="TCPUDP之间的区别是什么？"></a>TCPUDP之间的区别是什么？</h2><p>最大的区别是一个基于连接，一个基于非连接。<br>我们来举一个简单的例子，如果把人与人的通信比喻为进程与进程的通信，我们基本有两种方式。第一种方式是写信，第二种方式是打电话。</p>
+<p><img src="https://590233ee4fbb3.cdn.sohucs.com/auto/1-auto3974789fb5ee497a87f35500480b4571" alt="image-20211105125454004"></p>
+<p><strong>TCP是如何保证以上过程的？</strong></p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><h3 id="TCP报文数据包"><a href="#TCP报文数据包" class="headerlink" title="TCP报文数据包"></a>TCP报文数据包</h3><p><img src="https://pic1.zhimg.com/80/v2-63955c8436410907d6fe4697d5bf0b0c_720w.jpg" alt="img"></p>
+<p><img src="https://s1.ax1x.com/2018/03/02/9rzlJf.png" alt="img"></p>
+<h3 id="TCP-首部各字段的意义和作用"><a href="#TCP-首部各字段的意义和作用" class="headerlink" title="TCP 首部各字段的意义和作用"></a>TCP 首部各字段的意义和作用</h3><blockquote>
+<p>TCP首部最小为20字节，这20字节分为5行，每行4个字节也就是32个位。</p>
+<h5 id="源端口和目的端口-Port"><a href="#源端口和目的端口-Port" class="headerlink" title="源端口和目的端口 Port"></a>源端口和目的端口 Port</h5><ul>
+<li>源端口号：16位的源端口中包含初始化通信的端口。源端口和源IP地址的作用是标识报文的返回地址。</li>
+<li>目的端口号：16位的目的端口域定义传输的目的。这个端口指明报文接收计算机上的应用程序地址接口。计算机通过端口号识别访问哪个服务,比如http服务或ftp服务，发送方端口号是进行随机端口，目标端口号决定了接收方哪个程序来接收 分别占用16位，也就是端口号最大是2^16，所以端口号的范围是0~65536</li>
+</ul>
+<p>端口号的分配：</p>
+<ul>
+<li>知名端口号一般位于：1 — 255 之间</li>
+<li>256 — 1023的端口号，通常是由Unix系统占用（系统占用）</li>
+<li>1024 —5000 是大多数TCP、IP实现的临时分配</li>
+<li>大于5000的一般是给其他服务预留的（Internet上并不常用的服务）</li>
+</ul>
+<h5 id="序号-Sequence-Number"><a href="#序号-Sequence-Number" class="headerlink" title="序号 Sequence Number"></a>序号 Sequence Number</h5><p>TCP用序列号对数据包进行标记，以便在到达目的地后重新重装，假设当前的序列号为 s，发送数据长度为 l，则下次发送数据时的序列号为 s + l。在建立连接时通常由计算机生成一个随机数作为序列号的初始值。</p>
+<h5 id="确认号-Acknowledgemt-Number"><a href="#确认号-Acknowledgemt-Number" class="headerlink" title="确认号 Acknowledgemt Number"></a>确认号 Acknowledgemt Number</h5><p>占 4 个字节，表示期望收到对方下一个报文段的序号值。 TCP 的可靠性，是建立在「每一个数据报文都需要确认收到」的基础之上的。</p>
+<p>就是说，通讯的任何一方在收到对方的一个报文之后，都要发送一个相对应的「确认报文」，来表达确认收到。 那么，确认报文，就会包含确认号。 例如，通讯的一方收到了第一个 25kb 的报文，该报文的 序号值=0，那么就需要回复一个确认报文，其中的确认号 = 25600.</p>
+<h5 id="数据偏移-Offset"><a href="#数据偏移-Offset" class="headerlink" title="数据偏移 Offset"></a>数据偏移 Offset</h5><p>占 0.5 个字节 (4 位)。 这个字段实际上是指出了 TCP 报文段的首部长度 ，它指出了 TCP报文段的数据起始处 距离 TCP报文的起始处 有多远。（注意 数据起始处 和 报文起始处 的意思）</p>
+<p>一个数据偏移量 = 4 byte，由于 4 位二进制数能表示的最大十进制数字是 15，因此数据偏移的最大值是 60 byte，这也侧面限制了 TCP 首部的最大长度。</p>
+<h5 id="保留-Reserved"><a href="#保留-Reserved" class="headerlink" title="保留 Reserved"></a>保留 Reserved</h5><p>占 0.75 个字节 (6 位)。 保留为今后使用，但目前应置为 0。</p>
+<h5 id="标志位-TCP-Flags"><a href="#标志位-TCP-Flags" class="headerlink" title="标志位 TCP Flags"></a>标志位 TCP Flags</h5><p>标志位，一共有 6 个，分别占 1 位，共 6 位 。 每一位的值只有 0 和 1，分别表达不同意思。</p>
+<ul>
+<li>ACK：确认序号有效</li>
+<li>RST：重置连接</li>
+<li>SYN：发起了一个新连接</li>
+<li>FIN：释放一个连接</li>
+</ul>
+<h5 id="确认-ACK-Acknowlegemt"><a href="#确认-ACK-Acknowlegemt" class="headerlink" title="确认 ACK (Acknowlegemt)"></a>确认 ACK (Acknowlegemt)</h5><p>当 ACK = 1 的时候，确认号（Acknowledgemt Number）有效。 一般称携带 ACK 标志的 TCP 报文段为「确认报文段」。为0表示数据段不包含确认信息，确认号被忽略。</p>
+<p>TCP 规定，在连接建立后所有传送的报文段都必须把 ACK 设置为 1。</p>
+<h5 id="推送-PSH-Push"><a href="#推送-PSH-Push" class="headerlink" title="推送 PSH (Push)"></a>推送 PSH (Push)</h5><p>当 PSH = 1 的时候，表示该报文段高优先级，接收方 TCP 应该尽快推送给接收应用程序，而不用等到整个 TCP 缓存都填满了后再交付。</p>
+<h5 id="复位-RST-Reset"><a href="#复位-RST-Reset" class="headerlink" title="复位 RST (Reset)"></a>复位 RST (Reset)</h5><p>当 RST = 1 的时候，表示 TCP 连接中出现严重错误，需要释放并重新建立连接。 一般称携带 RST 标志的 TCP 报文段为「复位报文段」。</p>
+<h5 id="同步-SYN-SYNchronization"><a href="#同步-SYN-SYNchronization" class="headerlink" title="同步 SYN (SYNchronization)"></a>同步 SYN (SYNchronization)</h5><p>当 SYN = 1 的时候，表明这是一个请求连接报文段。 一般称携带 SYN 标志的 TCP 报文段为「同步报文段」。 在 TCP 三次握手中的第一个报文就是同步报文段，在连接建立时用来同步序号。</p>
+<p>对方若同意建立连接，则应在响应的报文段中使 SYN = 1 和 ACK = 1。</p>
+<h5 id="终止-FIN-Finis"><a href="#终止-FIN-Finis" class="headerlink" title="终止 FIN (Finis)"></a>终止 FIN (Finis)</h5><p>当 FIN = 1 时，表示此报文段的发送方的数据已经发送完毕，并要求释放 TCP 连接。</p>
+<p>一般称携带 FIN 的报文段为「结束报文段」。</p>
+<p>在 TCP 四次挥手释放连接的时候，就会用到该标志。</p>
+<h5 id="窗口大小-Window-Size"><a href="#窗口大小-Window-Size" class="headerlink" title="窗口大小 Window Size"></a>窗口大小 Window Size</h5><p>占 2 字节。</p>
+<p>该字段明确指出了现在允许对方发送的数据量，它告诉对方本端的 TCP 接收缓冲区还能容纳多少字节的数据，这样对方就可以控制发送数据的速度。 窗口大小的值是指，从本报文段首部中的确认号算起，接收方目前允许对方发送的数据量。</p>
+<p>例如，假如确认号是 701 ，窗口字段是 1000。这就表明，从 701 号算起，发送此报文段的一方还有接收 1000 （字节序号是 701 ~ 1700） 个字节的数据的接收缓存空间。</p>
+<h5 id="校验和-TCP-Checksum"><a href="#校验和-TCP-Checksum" class="headerlink" title="校验和 TCP Checksum"></a>校验和 TCP Checksum</h5><p>占 2 个字节。 由发送端填充，接收端对 TCP 报文段执行 CRC 算法，以检验 TCP 报文段在传输过程中是否损坏，如果损坏这丢弃。</p>
+<p>检验范围包括首部和数据两部分，这也是 TCP 可靠传输的一个重要保障。</p>
+<h5 id="紧急指针-Urgent-Pointer"><a href="#紧急指针-Urgent-Pointer" class="headerlink" title="紧急指针 Urgent Pointer"></a>紧急指针 Urgent Pointer</h5><p>占 2 个字节。 仅在 URG = 1 时才有意义，它指出本报文段中的紧急数据的字节数。 当 URG = 1 时，发送方 TCP 就把紧急数据插入到本报文段数据的最前面，而在紧急数据后面的数据仍是普通数据。</p>
+<p>因此，紧急指针指出了紧急数据的末尾在报文段中的位置。</p>
+</blockquote>
+<p><strong>有三个关键的步骤，分别为三次握手、传输确认、四次挥手。</strong></p>
+<h3 id="TCP的三次握手，四次挥手"><a href="#TCP的三次握手，四次挥手" class="headerlink" title="TCP的三次握手，四次挥手"></a>TCP的三次握手，四次挥手</h3><h4 id="需要了解的信息"><a href="#需要了解的信息" class="headerlink" title="需要了解的信息"></a>需要了解的信息</h4><ul>
+<li>ACK ： TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的报文的ACK必须为1</li>
+<li>SYN(SYNchronization) ： 在连接建立时用来同步序号。当SYN=1而ACK=0时，表明这是一个连接请求报文。对方若同意建立连接，则应在响应报文中使SYN=1和ACK=1. 因此, SYN置1就表示这是一个连接请求或连接接受报文。</li>
+<li>FIN （finis）即完，终结的意思， 用来释放一个连接。当 FIN = 1 时，表明此报文段的发送方的数据已经发送完毕，并要求释放连接。</li>
+</ul>
+<p>TCP（Transmission Control Protocol，传输控制协议）是 面向连接的协议，也就是说在<strong>收发数据之前，必须先和对方建立连接</strong></p>
+<blockquote>
+<p>一个TCP连接必须要经过三次“对话”才能建立起来，其中的过程非常复杂，只简单的 描述下这三次对话的简单过程：主机A向主机B发出连接请求数据包：“我想给你发数据，可以吗？”，这是第一次对话；主机B向主机A发送同意连接和要求同步 （同步就是两台主机一个在发送，一个在接收，协调工作）的数据包：“可以，你什么时候发？”，这是第二次对话；主机A再发出一个数据包确认主机B的要求同 步：“我现在就发，你接着吧！”，这是第三次对话。三次“对话”的目的是使数据包的发送和接收同步，经过三次“对话”之后，主机A才向主机B正式发送数 据。</p>
+</blockquote>
+<p>TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。<strong>三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。</strong></p>
+<img src="https://pic2.zhimg.com/80/v2-1587e91f14923eae0fa7d846cb10df99_720w.jpg" alt="img" style="zoom:200%;" />
+
+
+
+<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后，客户端进入<strong>SYN_SEND</strong>状态，等待服务器的确认；    </p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1)；同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入<strong>SYN_RECV</strong>状态；  </p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为y+1，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入<strong>ESTABLISHED</strong>状态，完成TCP三次握手。</p>
+<img src="https://590233ee4fbb3.cdn.sohucs.com/auto/1-auto098b95dd1e884eefb56a114cbb1a529f"  />
+
+<p><strong>为什么要三次握手而不是两次握手？服务端回复完SYN+ACK之后就建立连接</strong></p>
+<p>为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。</p>
+<p>假设采用两次握手建立连接客户端，向服务端发送了一个SYN来请求建立连接。<br>因为某些未知的原因并没有到达服务器在中间某个网络节点产生了滞留。<br>为了建立连接客户端，会重发SYN，这次的数据包正常送达，服务端回复SYN+ACK之后建立起来连接。<br>但是第一包数据阻塞的网络节点突然恢复，第一包省包又送达到服务端。这时服务端会误认为是客户端又发起了一个新的连接，从而在两次握手之后进入等待数据状态。<br><strong>服务端认为是两个连接，而客户端认为是一个连接，造成了状态不一致。</strong><br>如果在三次握手的情况下，服务端收不到最后的ACK自然不会认为连接建立成功。<br>所以三次握手本质上来说就是为了解决网络信道不可靠的问题。为了能够在不可靠的信道上建立起可靠的连接。<br>经过三次握手之后，客户端和服务端都进入了数据传输状态。</p>
+<blockquote>
+<p>具体例子：“已失效的连接请求报文段”的产生在这样一种情况下：client发出的第一个连接请求报文段并没有丢失，而是在某个网络结点长时间的滞留了，以致延误到连接释放以后的某个时间才到达server。本来这是一个早已失效的报文段。但server收到此失效的连接请求报文段后，就误认为是client再次发出的一个新的连接请求。于是就向client发出确认报文段，同意建立连接。假设不采用“三次握手”，那么只要server发出确认，新的连接就建立了。由于现在client并没有发出建立连接的请求，因此不会理睬server的确认，也不会向server发送数据。但server却以为新的运输连接已经建立，并一直等待client发来数据。这样，server的很多资源就白白浪费掉了。采用“三次握手”的办法可以防止上述现象发生。例如刚才那种情况，client不会向server的确认发出确认。server由于收不到确认，就知道client并没有要求建立连接。”</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 -nnA &#x27;port 9999&#x27;</span><br><span class="line">nc -4vl 9999</span><br><span class="line">telnet swordk.cn 9999</span><br></pre></td></tr></table></figure>
+
+<h4 id="传输确认"><a href="#传输确认" class="headerlink" title="传输确认"></a>传输确认</h4><p>TCP协议需要在不可靠的信道上保证可靠的连接。现在这有几个问题需要面对。</p>
+<p>一包数据有可能会被拆成多包发送如何处理<strong>丢包</strong>问题？<br>这些数据包到达的先后顺序不同，如何处理<strong>乱序</strong>问题？</p>
+<p><img src="https://590233ee4fbb3.cdn.sohucs.com/auto/1-auto683ac4ddaa994e71a7e04583ee9b9aa5" alt="image-20211105132602749"></p>
+<p>针对这些要求，TCP协议为每一个连接建立了一个发送缓冲区。从建立连接后的第一个字节的序列号为零，后面每个字节的序列号就会增加一。<br>发送数据时，从发送缓冲区取一部分数据组成发送报文，在其TCP协议头中会附带序列号和长度。接收端在收到数据后需要回复确认报文。<br>确认报文中的ACK等于接收序列号加长度，也就是下一包数据需要发送的基础序列号。<br>这样一问一答的发送方式，能够使发送端确认发送的数据已经被对方收到。<br>发送端也可以一次发送连续的多包数据，接收端只需要回复一次ACK就可以了。<br>这样发送端可以把待发送的数据分割成一系列的碎片，发送到对端。对端根据序列号和长度在接收后重构出来完整的数据。<br>假设其中丢失了某些数据方在接收端可以要求发送端重传。比如丢失了100-199，这一百个字节接收端下发送端发送ACK=100的报文。<br>发送端收到后，重传这一包数据，接收端进行补齐。<br>以上过程不区分客户端和服务端，<strong>TCP连接是全双功能，对于两端来说均采用上述机制。</strong></p>
+<hr>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><img src="https://pic2.zhimg.com/80/v2-6e5f05603526c1d259b300f20b8857a5_720w.jpg" alt="img" style="zoom:200%;" />
+
+<p>当客户端和服务器通过三次握手建立了TCP连接以后，当数据传送完毕，肯定是要断开TCP连接的啊。那对于TCP的断开连接，这里就有了神秘的“四次分手”。</p>
+<p><strong>第一次挥手：</strong> 主机1（可以使客户端，也可以是服务器端），设置Sequence Number，向主机2发送一个FIN报文段；此时，主机1进入FIN_WAIT_1状态；这表示主机1没有数据要发送给主机2了；</p>
+<p><strong>第二次挥手：</strong> 主机2收到了主机1发送的FIN报文段，向主机1回一个ACK报文段，Acknowledgment Number为Sequence Number加1；主机1进入FIN_WAIT_2状态；主机2告诉主机1，我“同意”你的关闭请求；</p>
+<p><strong>第三次挥手：</strong> 主机2向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_ACK状态；</p>
+<p><strong>第四次挥手：</strong> 主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了。</p>
+<p><strong>为什么要四次挥手</strong>？</p>
+<p>TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着，当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据；当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的；当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。</p>
+<p><strong>为什么客户端需要等待超时时间？</strong></p>
+<p>这是为了保证对方已收到ACK。因为假设客户端发送完最后一包ACK后就释放了连接。一旦ACK在网络中丢失。服务端将一直停留在最后确认状态。</p>
+<p>如果客户端发送最后一个ACK后等待一段时间，这时服务端因为没有收到ACK，会重发FIN。<br>客户端会响应这个分包重发ACK，用刷新超时时间这个机制跟三次握手一样，也是为了<strong>保证在不可靠的网络链路中进行可靠的连接，断开确认。</strong></p>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p>UDP协议是基于非连接的发送数据，就是简单的把数据包封装一下，然后从网卡发出去就可以了。数据包之间并没有状态上的联系。正因为UDP这种简单的处理方式，导致它的性能损耗非常少。对于CPU内存资源的占用也远小于TCP。但是对于网络传输过程中产生的丢包，UDP协议并不能保证。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3985563-4bcddf13416e9f0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<h3 id="什么时候应该使用TCP？"><a href="#什么时候应该使用TCP？" class="headerlink" title="什么时候应该使用TCP？"></a>什么时候应该使用TCP？</h3><p>当对网络通讯质量有要求的时候，比如：整个数据要准确无误的传递给对方，这往往用于一些要求可靠的应用，比如HTTP、HTTPS、FTP等传输文件的协议，POP、SMTP等邮件传输的协议。 </p>
+<h3 id="什么时候应该使用UDP？"><a href="#什么时候应该使用UDP？" class="headerlink" title="什么时候应该使用UDP？"></a>什么时候应该使用UDP？</h3><p>UDP的优点是速度快，但是可能产生丢包。所以适用于对实时性要求较高，但是对少量丢包并没有太大要求的场景，比如域名查询与云通话、视频直播等。</p>
+<h2 id="常见协议"><a href="#常见协议" class="headerlink" title="常见协议"></a>常见协议</h2><table>
+<thead>
+<tr>
+<th align="left">端口</th>
+<th align="left">服务</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">21</td>
+<td align="left">FTP</td>
+<td align="left">FTP 服务器所开放的端口，用于上传、下载</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">SSH</td>
+<td align="left">22 端口就是 ssh 端口，用于通过命令行模式远程连接 Linux 系统服务器</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">SMTP</td>
+<td align="left">SMTP 服务器所开放的端口，用于发送邮件</td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left">HTTP</td>
+<td align="left">用于网站服务例如 IIS、Apache、Nginx 等提供对外访问</td>
+</tr>
+<tr>
+<td align="left">110</td>
+<td align="left">POP3</td>
+<td align="left">110 端口是为 POP3（邮件协议 3）服务开放的</td>
+</tr>
+<tr>
+<td align="left">137/138/139</td>
+<td align="left">NETBIOS</td>
+<td align="left">其中 137、138 是 UDP 端口，当通过网上邻居传输文件时用这个端口。而 139 端口：通过这个端口进入的连接试图获得 NetBIOS/SMB 服务。这个协议被用于 windows 文件和打印机共享和 SAMBA</td>
+</tr>
+<tr>
+<td align="left">143</td>
+<td align="left">IMAP</td>
+<td align="left">143 端口主要是用于“Internet Message AccessProtocol”v2（Internet 消息访问协议，简称 IMAP），和 POP3 一样，是用于电子邮件的接收的协议</td>
+</tr>
+<tr>
+<td align="left">443</td>
+<td align="left">HTTPS</td>
+<td align="left">网页浏览端口，能提供加密和通过安全端口传输的另一种 HTTP</td>
+</tr>
+<tr>
+<td align="left">1433</td>
+<td align="left">SQL Server</td>
+<td align="left">1433 端口，是 SQL Server 默认的端口，SQL Server 服务使用两个端口：TCP-1433、UDP-1434。其中 1433 用于供 SQL Server 对外提供服务，1434 用于向请求者返回 SQL Server 使用了哪个 TCP/IP 端口</td>
+</tr>
+<tr>
+<td align="left">3306</td>
+<td align="left">MySQL</td>
+<td align="left">3306 端口，是 MySQL 数据库的默认端口，用于 MySQL 对外提供服务</td>
+</tr>
+<tr>
+<td align="left">3389</td>
+<td align="left">Windows Server Remote Desktop Services</td>
+<td align="left">3389 端口是 Windows 远程桌面的服务端口，可以通过这个端口，用 “远程桌面” 等连接工具来连接到远程的服务器</td>
+</tr>
+<tr>
+<td align="left">8080</td>
+<td align="left">代理端口</td>
+<td align="left">8080 端口同 80 端口，是被用于 WWW 代理服务的，可以实现网页浏览，经常在访问某个网站或使用代理服务器的时候，会加上 “:8080” 端口号。另外 Apache Tomcat web server 安装后，默认的服务端口就是 8080</td>
+</tr>
+</tbody></table>
+<p>in the end</p>
+<p>转自：brey.cn</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/">http://example.com/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://tcpphoto.com/wp-content/uploads/cropped-TCP-Favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/11/25/hello-world/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">生命太短，没有时间留给遗憾</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">TCP&#x2F;IP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%85%B7%E4%BD%93%E5%90%AB%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">TCP&#x2F;IP 协议的具体含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.</span> <span class="toc-text">IP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text">IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%8D%8F%E8%AE%AE%E5%A4%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text">IP协议头</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E4%B8%AD%E7%9A%84-TCP-%E5%92%8C-UDP"><span class="toc-number">1.3.</span> <span class="toc-text">传输层中的 TCP 和 UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCPUDP%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">TCPUDP之间的区别是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E6%8A%A5%E6%96%87%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">1.5.1.</span> <span class="toc-text">TCP报文数据包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-%E9%A6%96%E9%83%A8%E5%90%84%E5%AD%97%E6%AE%B5%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="toc-number">1.5.2.</span> <span class="toc-text">TCP 首部各字段的意义和作用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%BA%90%E7%AB%AF%E5%8F%A3%E5%92%8C%E7%9B%AE%E7%9A%84%E7%AB%AF%E5%8F%A3-Port"><span class="toc-number">1.5.2.0.1.</span> <span class="toc-text">源端口和目的端口 Port</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%8F%E5%8F%B7-Sequence-Number"><span class="toc-number">1.5.2.0.2.</span> <span class="toc-text">序号 Sequence Number</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E5%8F%B7-Acknowledgemt-Number"><span class="toc-number">1.5.2.0.3.</span> <span class="toc-text">确认号 Acknowledgemt Number</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%81%8F%E7%A7%BB-Offset"><span class="toc-number">1.5.2.0.4.</span> <span class="toc-text">数据偏移 Offset</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%9D%E7%95%99-Reserved"><span class="toc-number">1.5.2.0.5.</span> <span class="toc-text">保留 Reserved</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%87%E5%BF%97%E4%BD%8D-TCP-Flags"><span class="toc-number">1.5.2.0.6.</span> <span class="toc-text">标志位 TCP Flags</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4-ACK-Acknowlegemt"><span class="toc-number">1.5.2.0.7.</span> <span class="toc-text">确认 ACK (Acknowlegemt)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A8%E9%80%81-PSH-Push"><span class="toc-number">1.5.2.0.8.</span> <span class="toc-text">推送 PSH (Push)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E4%BD%8D-RST-Reset"><span class="toc-number">1.5.2.0.9.</span> <span class="toc-text">复位 RST (Reset)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5-SYN-SYNchronization"><span class="toc-number">1.5.2.0.10.</span> <span class="toc-text">同步 SYN (SYNchronization)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%88%E6%AD%A2-FIN-Finis"><span class="toc-number">1.5.2.0.11.</span> <span class="toc-text">终止 FIN (Finis)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F-Window-Size"><span class="toc-number">1.5.2.0.12.</span> <span class="toc-text">窗口大小 Window Size</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E5%92%8C-TCP-Checksum"><span class="toc-number">1.5.2.0.13.</span> <span class="toc-text">校验和 TCP Checksum</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%A7%E6%80%A5%E6%8C%87%E9%92%88-Urgent-Pointer"><span class="toc-number">1.5.2.0.14.</span> <span class="toc-text">紧急指针 Urgent Pointer</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">TCP的三次握手，四次挥手</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">需要了解的信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E7%A1%AE%E8%AE%A4"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">传输确认</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">1.5.3.4.</span> <span class="toc-text">四次挥手</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UDP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.</span> <span class="toc-text">UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BA%94%E8%AF%A5%E4%BD%BF%E7%94%A8TCP%EF%BC%9F"><span class="toc-number">1.6.1.</span> <span class="toc-text">什么时候应该使用TCP？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BA%94%E8%AF%A5%E4%BD%BF%E7%94%A8UDP%EF%BC%9F"><span class="toc-number">1.6.2.</span> <span class="toc-text">什么时候应该使用UDP？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.7.</span> <span class="toc-text">常见协议</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/25/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/11/25/hello-world/" title="Hello World">Hello World</a><time datetime="2021-11-24T17:01:56.458Z" title="发表于 2021-11-25 01:01:56">2021-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/" title="TCP/IP协议"><img src="https://tcpphoto.com/wp-content/uploads/cropped-TCP-Favicon.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TCP/IP协议"/></a><div class="content"><a class="title" href="/2021/11/25/TcpIP%E5%8D%8F%E8%AE%AE/" title="TCP/IP协议">TCP/IP协议</a><time datetime="2021-11-24T16:00:00.000Z" title="发表于 2021-11-25 00:00:00">2021-11-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
