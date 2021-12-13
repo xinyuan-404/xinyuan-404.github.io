@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学之理论篇(认证理论与技术) | Xinyuan's blog</title><meta name="keywords" content="密码学"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="密码学之理论篇(认证理论与技术)认证与认证系统认证又称为鉴别，是许多应用系统中安全保护的第一道设防，在现代密码学中有着非常重要的作用，认证是个过程，通过这个过程，一个实体向另外一个实体证明某种声称的属性，前者是一个主体，声称拥有某种合法权利，可以进入后一个实体的系统或者使用后者的服务，通过认证，后者确定前者确实拥有的权利，认证参数一般有多种形式，如：口令、标识符、密钥、信物、智能卡、指纹、视网纹。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码学之理论篇(认证理论与技术)">
+<meta property="og:url" content="http://websec.space/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="密码学之理论篇(认证理论与技术)认证与认证系统认证又称为鉴别，是许多应用系统中安全保护的第一道设防，在现代密码学中有着非常重要的作用，认证是个过程，通过这个过程，一个实体向另外一个实体证明某种声称的属性，前者是一个主体，声称拥有某种合法权利，可以进入后一个实体的系统或者使用后者的服务，通过认证，后者确定前者确实拥有的权利，认证参数一般有多种形式，如：口令、标识符、密钥、信物、智能卡、指纹、视网纹。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg">
+<meta property="article:published_time" content="2021-12-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-13T13:34:59.020Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="密码学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '密码学之理论篇(认证理论与技术)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-13 21:34:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">密码学之理论篇(认证理论与技术)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-11T16:00:00.000Z" title="发表于 2021-12-12 00:00:00">2021-12-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-13T13:34:59.020Z" title="更新于 2021-12-13 21:34:59">2021-12-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学之理论篇(认证理论与技术)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="密码学之理论篇-认证理论与技术"><a href="#密码学之理论篇-认证理论与技术" class="headerlink" title="密码学之理论篇(认证理论与技术)"></a>密码学之理论篇(<strong>认证理论与技术</strong>)</h1><h2 id="认证与认证系统"><a href="#认证与认证系统" class="headerlink" title="认证与认证系统"></a>认证与认证系统</h2><p>认证又称为鉴别，是许多应用系统中安全保护的第一道设防，在现代密码学中有着非常重要的作用，认证是个过程，通过这个过程，一个实体向另外一个实体证明某种声称的属性，前者是一个主体，声称拥有某种合法权利，可以进入后一个实体的系统或者使用后者的服务，通过认证，后者确定前者确实拥有的权利，认证参数一般有多种形式，如：口令、标识符、密钥、信物、智能卡、指纹、视网纹。</p>
+<blockquote>
+<p>“口令”相当于平时咱们登录系统时输入的密码（也是一种认证） 。</p>
+<p>“密钥”相当于公钥密码体制中的私钥，可用于数字签名（也是一种认证）。</p>
+<p>“智能卡”相当于校园一卡通之类（也是一种认证） 。</p>
+<p>“指纹”比如指纹识别手机开机、指纹识别移动支付等（也是一种认证） 。</p>
+</blockquote>
+<p>随着Hash函数和数字签名的发现，人们认识到保密和认证是两个不同的属性的问题，认证不能自动提供保密性，而保密性也不能自然提供认证功能。认证主要用于确保消息发送者和接收者的真实性以及消息的完整性。</p>
+<p><img src="https://img-blog.csdnimg.cn/45c78e46e5364498b8f7fc6cbc983113.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeHk0MDQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>注意：这个示意图并不绝对。Hash函数也能用于认证，但Hash函数里并没用到密钥。</p>
+<h2 id="Hash函数概述"><a href="#Hash函数概述" class="headerlink" title="Hash函数概述"></a>Hash函数概述</h2><p>Hash 函数又称为哈希函数、杂凑函数和散列函数，在现代密码学中扮演着重要角色。Hash函数是一公开函数，通常记为H或h。Hash函数可以将任意长的消息 m映射为较短的、固定长度的一个值，记为H(m)，经常称函数值H(m)为散列值、哈希值、杂凑值、杂凑码或消息摘要、数组指纹。</p>
+<p>Hash函数也可以看作是一种单向密码体制，即它从一个明文到密文是不可逆映射，只有加密过程，不能解密。哈希值是消息中所有比特的函数，因此提供了一种错误检测能力，即改变消息中任何一个比特或几个比特都会使哈希值发生改变。Hash 函数是实现有效、安全、可靠数字签名和认证的重要工具。</p>
+<p>利用Hash函数可以对消息的完整性</p>
+<blockquote>
+<p>利用Hash函数可以对消息的完整性进行认证。比如A将(x,H(x))发送给B,其中x是消息，H()是公开的Hash函数。B利用Hash函数验证一下，通过了说明消息完整，不通过说明消息不完整。</p>
+<p>注意：这只是简单说明Hash函数用于认证的原理，并不能防止伪造。如攻击者将A发送的东西截取了，反手将（y, H(y)）发送给接收者B，B也觉得消息挺完整的。有时候还要结合密钥使用。</p>
+</blockquote>
+<h3 id="Hash函数的概念及结构"><a href="#Hash函数的概念及结构" class="headerlink" title="Hash函数的概念及结构"></a>Hash函数的概念及结构</h3><p>1.Hash函数的概念及一般安全特性</p>
+<p>Hash函数H是一个公开函数，不需要密钥，用于将任意长的消息m映射为较短的、固定长度一个值H(m)</p>
+<p>对于H有下面六个要求：</p>
+<p>(1)能够接受任意长度的消息作为输入</p>
+<p>(2)能够生成较短的，固定长度的输出</p>
+<p>(3)对任何消息输入都应该能够容易快速地计算出哈希值</p>
+<p>(4)应该具有单向性，也就是说，给定H(m)，恢复消息m在计算上是不可行的</p>
+<p>(5)应该能够抵抗弱碰撞，即给定消息m和H(m),找到另外一个消息m≠m‘，使H(m)=H(m’)是不可能的</p>
+<p>(6)应该能够抵抗强冲击，即可以有两个有意义的消息m和m’，使得H(m)=H(m’)几乎是不可能的</p>
+<blockquote>
+<p>弱碰撞：对于给定的一个“人”，找到一个和他指纹相同的人。</p>
+<p>强碰撞：在这个世界上找到两个指纹相同的人。</p>
+</blockquote>
+<p>Hash函数应该满足的一般安全特性如下：</p>
+<p>(1)单向性，给定H(m),计算m在计算上不可行</p>
+<p>(2)抗弱碰撞性，即给定消息m和H(m),找到另外一个消息m≠m‘，使H(m)=H(m’)是不可能的</p>
+<p>(3)抗强碰撞性，即可以有两个有意义的消息m和m’，使得H(m)=H(m’)几乎是不可能的</p>
+<p>2.MD迭代结构</p>
+<p>1979年，Merkle建议了一个Hash函数的一般结构，这一种迭代结构的Hash函数，MD系列，SHA系列大多数Hash函数都使用该结构。</p>
+<p><img src="https://img-blog.csdnimg.cn/5711b384a17449edae6bcf92c16d7f22.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeHk0MDQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>f函数：输入n+b比特，输出n比特</p>
+<p>Hash函数输入消息m，并将其分为L个固定长度的分组，该Hash函数重复使用一个压缩函数f。压缩函数f有两个输入，一个是前一阶段的n比特输入，另外一个源于消息的b的bit分组，并产生一个n bit的输出</p>
+<h3 id="Hash函数的发展现状"><a href="#Hash函数的发展现状" class="headerlink" title="Hash函数的发展现状"></a>Hash函数的发展现状</h3><p>最常用的Hash函数有两个系列：Message Digest(MD)系列和SHA(Security Hash Algorithm)系列</p>
+<ol>
+<li><p>Message Digest(MD)系列</p>
+<p>MD5(1991年提出，是对MD4的改进版，其哈希值为128位)</p>
+</li>
+<li><p>SHA(Security Hash Algorithm)系列</p>
+<p>1995年SHA-1被提出消息三列为160bit，2003年，NIST相继对SHA系列算法进行了扩展提出了SHA-256、SHA-384、SHA-512，并于2004年增加了一种变种算法：SHA-224，统称为SHA-2</p>
+</li>
+</ol>
+<p>MD5曾经是应用最广泛的Hash算法，2004年，山东大学的王小云教授等人发表了对SHA-1的完整版攻击，能找到一组SHA-1的碰撞。（MD5散列算法已不安全，不在推荐使用）</p>
+<p>2007年NIST发起了SHA-3竞赛以征集新的Hash算法，2012年，Keccak成为竞赛的胜利者，SHA-3标准公布，SHA-3中的四种Hash算法SHA3-224、SHA3-256和SHA3-512可完全替换SHA-2</p>
+<h2 id="Hash函数算法"><a href="#Hash函数算法" class="headerlink" title="Hash函数算法"></a>Hash函数算法</h2><h3 id="SHA-1算法"><a href="#SHA-1算法" class="headerlink" title="SHA-1算法"></a>SHA-1算法</h3><p>SHA-1是当前使用最广泛的哈希算法，它接受输入消息的最大长度为(2^64^ -1)bit , 生成160bit的消息摘要。首先将输入消息划分为512bit块，若最后一个数据块不满足长度要求，按照一定规则填充512bit块。然后每个512bit块重复使用分块处理函数，最终输出160bit哈希值。每512bit块以32bit字为处理单位进行压缩，压缩函数包含4回合运算，每一回合20步，总共80步。</p>
+<h3 id="SHA-256、SHA-384和SHA-512-算法"><a href="#SHA-256、SHA-384和SHA-512-算法" class="headerlink" title="SHA-256、SHA-384和SHA-512^*^ 算法"></a>SHA-256、SHA-384和SHA-512^*^ 算法</h3><p>SHA-256、SHA-384、SHA-512，统称SHA-2. SHA-256和SHA-1算法一样，以512bit分块为基本处理单位而SHA-384、SHA-512与SHA-1算法不同，是以1024bit分块为基本处理单位。</p>
+<h3 id="SHA-3算法"><a href="#SHA-3算法" class="headerlink" title="SHA-3算法"></a>SHA-3算法</h3><p>2007年NIST发起SHA-3竞赛以征集新的Hash算法</p>
+<p>2012年，NIST最终选择Keccak算法作为SHA-3标准</p>
+<p>为了与SHA-2完全兼容，SHA-3也提出了四种Hash算法SHA3-224、SHA3-256、SHA3-384、SHA3-512，可完全替换SHA-2</p>
+<h4 id="Keccak算法的总体描述"><a href="#Keccak算法的总体描述" class="headerlink" title="Keccak算法的总体描述"></a>Keccak算法的总体描述</h4><p>Keccak算法基于海绵结构，区别于多数Hash函数所采用的经典MD结构，处理过程分为吸收(absorbing)阶段和挤压(squeezing)阶段两个部分，消息被分为长度r bit的若干消息块(假设N组，p<del>1</del>,p<del>2</del>,p<del>3</del>,…,p<del>n</del>)</p>
+<h3 id="MD5算法"><a href="#MD5算法" class="headerlink" title="MD5算法"></a>MD5算法</h3><p>MD5算法是由RSA创始人Rivest设计开发的，能接收任意长度的消息作为输入，并生成128bit哈希值。</p>
+<h2 id="Hash算法的攻击现状分析"><a href="#Hash算法的攻击现状分析" class="headerlink" title="Hash算法的攻击现状分析"></a>Hash算法的攻击现状分析</h2><p>Hash函数主要用于数据完整性验证，确定消息是否被修改，对Hash函数攻击的目标能够生成与原消息不同的消息，但其哈希值与原消息的哈希值相等，即碰撞攻击</p>
+<p>Hash函数的攻击可以分为如下几类：</p>
+<p>（1）原像攻击，对给定的哈希值Y∈{0,1}^n^ ,能够找到一个原消息M，使得H(M)=Y</p>
+<p>（2）第二原像攻击也称为弱碰撞攻击，对给定的消息M，找到另外一个消息M‘，使得M≠M’，而H(M)=H(M’)</p>
+<p>（3）碰撞攻击也称为强碰撞攻击，找到任意两消息M和M‘(M≠M’)，使得H(M)=H(M’)</p>
+<p>生日攻击是Hash函数碰撞攻击方法中最重要的一种攻击方法。生日攻击的名字起源于所谓的生日悖论。</p>
+<blockquote>
+<p>生日悖论是指在不少于 23 个人中至少有两人生日相同的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A6%82%E7%8E%87/828845">概率</a>大于 50%。</p>
+<p>严格来说，它并不是一个真正的悖论，只是令人吃惊的概率问题。</p>
+</blockquote>
+<p>将生日悖论推广位下述问题：已知在1到n之间均匀分布的整数型随机变量，若该变量的k个取值中至少有两个取值相同的概率大于0.5，则k至少多大？</p>
+<p>k=1.18n^½^</p>
+<h3 id="生日攻击"><a href="#生日攻击" class="headerlink" title="生日攻击"></a>生日攻击</h3><p>生日攻击是基于下述结论:设单向Hash函数Y=H(X)，X、Y都是有限长度的，并且|X|≥2|Y|,记为|X|=n,|Y|=m,那么Hash函数H有2^m^个可能的输出，如果H的k个随机输入中至少有两个产生相同输出的概率大于0.5，k≈2^m/2^</p>
+<p>另外一种攻击Hash函数的方法是采用密码分析学的办法，即利用算法逻辑上的缺陷，降低破译算法的代价。2004年，山东大学的王小云教授在美国加州圣巴巴拉召开的国际密码学会议上，做了破译MD5、HAVAL-128、MD4和RIPEMD算法的报告。王小云的研究成果被公认为MD5算法最优先的破解办法。</p>
+<h2 id="消息认证"><a href="#消息认证" class="headerlink" title="消息认证"></a>消息认证</h2><p>消息认证是一个过程，用以验证接收消息的真实性(的确是由它所声称的实体发来的)和完整性，同时还用于验证消息的顺序性和时间性。</p>
+<p>可用消息认证码(Mesage Authentication Code,MAC)对消息做认证.</p>
+<p>消息认证码是指消息被一密钥控制的公开函数作用后产生的、用作认证符的固定长度的数值，MAC算法输入任意长度消息输出固定长度的数据，这点与Hash函数类似，但是与Hash函数不同的是，计算MAC值必须持有共享密钥.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/">http://websec.space/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></div><div class="post_share"><div class="social-share" data-image="https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/"><img class="prev-cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.a828b40fc16468cc13722a358cab561d?rik=aN0Dz2tL5fHVPA&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fspace%2f20180521%2f3a5c35bab7d1a105597e0d35b33d592b.jpg&amp;ehk=WuF4ITq%2bz3LW7wBWbhBl78hPTCbpVcEal%2f%2fjl9vjOZg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">密码学之理论篇(密钥管理)</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/10/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/"><img class="next-cover" src="https://uploadfile.bizhizu.cn/2014/0124/20140124114736347.jpg.source.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码学之理论篇（非对称密码体制）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="密码学之理论篇（概述及古典密码学）"><img class="cover" src="https://img.halfrost.com/Blog/ArticleTitleImage/96_0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-01</div><div class="title">密码学之理论篇（概述及古典密码学）</div></div></a></div><div><a href="/2021/12/04/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E5%AE%9E%E8%B7%B5/" title="密码学之实践篇"><img class="cover" src="https://img.zcool.cn/community/013dee5b62fd9aa801215c8f559d20.jpg@1280w_1l_2o_100sh.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-04</div><div class="title">密码学之实践篇</div></div></a></div><div><a href="/2021/12/04/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%88%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学之理论篇（分组密码体制）"><img class="cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201308%2F09%2F20130809092857_jcJmY.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641225275&t=04070e508ee1828218847bdb51aa2b64" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-04</div><div class="title">密码学之理论篇（分组密码体制）</div></div></a></div><div><a href="/2021/12/08/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学理论篇之序列密码体制"><img class="cover" src="https://pic.vjshi.com/2018-09-19/e69649e57261bb865a0437dd20d03772/00001.jpg?x-oss-process=style/watermark" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-08</div><div class="title">密码学理论篇之序列密码体制</div></div></a></div><div><a href="/2021/12/10/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学之理论篇（非对称密码体制）"><img class="cover" src="https://uploadfile.bizhizu.cn/2014/0124/20140124114736347.jpg.source.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-10</div><div class="title">密码学之理论篇（非对称密码体制）</div></div></a></div><div><a href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/" title="密码学之理论篇(密钥管理)"><img class="cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.a828b40fc16468cc13722a358cab561d?rik=aN0Dz2tL5fHVPA&riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fspace%2f20180521%2f3a5c35bab7d1a105597e0d35b33d592b.jpg&ehk=WuF4ITq%2bz3LW7wBWbhBl78hPTCbpVcEal%2f%2fjl9vjOZg%3d&risl=&pid=ImgRaw&r=0" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-13</div><div class="title">密码学之理论篇(密钥管理)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87-%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">密码学之理论篇(认证理论与技术)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E4%B8%8E%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">认证与认证系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">Hash函数概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">Hash函数的概念及结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%91%E5%B1%95%E7%8E%B0%E7%8A%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">Hash函数的发展现状</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%E5%87%BD%E6%95%B0%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">Hash函数算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SHA-1%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">SHA-1算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SHA-256%E3%80%81SHA-384%E5%92%8CSHA-512-%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">SHA-256、SHA-384和SHA-512^*^ 算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SHA-3%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">SHA-3算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Keccak%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%BB%E4%BD%93%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">Keccak算法的总体描述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MD5%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.4.</span> <span class="toc-text">MD5算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash%E7%AE%97%E6%B3%95%E7%9A%84%E6%94%BB%E5%87%BB%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text">Hash算法的攻击现状分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">生日攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.5.</span> <span class="toc-text">消息认证</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/" title="密码学之理论篇(密钥管理)"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.a828b40fc16468cc13722a358cab561d?rik=aN0Dz2tL5fHVPA&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fspace%2f20180521%2f3a5c35bab7d1a105597e0d35b33d592b.jpg&amp;ehk=WuF4ITq%2bz3LW7wBWbhBl78hPTCbpVcEal%2f%2fjl9vjOZg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之理论篇(密钥管理)"/></a><div class="content"><a class="title" href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/" title="密码学之理论篇(密钥管理)">密码学之理论篇(密钥管理)</a><time datetime="2021-12-12T16:00:00.000Z" title="发表于 2021-12-13 00:00:00">2021-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/" title="密码学之理论篇(认证理论与技术)"><img src="https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之理论篇(认证理论与技术)"/></a><div class="content"><a class="title" href="/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/" title="密码学之理论篇(认证理论与技术)">密码学之理论篇(认证理论与技术)</a><time datetime="2021-12-11T16:00:00.000Z" title="发表于 2021-12-12 00:00:00">2021-12-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/10/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学之理论篇（非对称密码体制）"><img src="https://uploadfile.bizhizu.cn/2014/0124/20140124114736347.jpg.source.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之理论篇（非对称密码体制）"/></a><div class="content"><a class="title" href="/2021/12/10/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学之理论篇（非对称密码体制）">密码学之理论篇（非对称密码体制）</a><time datetime="2021-12-09T16:00:00.000Z" title="发表于 2021-12-10 00:00:00">2021-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/08/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学理论篇之序列密码体制"><img src="https://pic.vjshi.com/2018-09-19/e69649e57261bb865a0437dd20d03772/00001.jpg?x-oss-process=style/watermark" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学理论篇之序列密码体制"/></a><div class="content"><a class="title" href="/2021/12/08/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/" title="密码学理论篇之序列密码体制">密码学理论篇之序列密码体制</a><time datetime="2021-12-07T16:00:00.000Z" title="发表于 2021-12-08 00:00:00">2021-12-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/04/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E5%AE%9E%E8%B7%B5/" title="密码学之实践篇"><img src="https://img.zcool.cn/community/013dee5b62fd9aa801215c8f559d20.jpg@1280w_1l_2o_100sh.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之实践篇"/></a><div class="content"><a class="title" href="/2021/12/04/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E5%AE%9E%E8%B7%B5/" title="密码学之实践篇">密码学之实践篇</a><time datetime="2021-12-03T16:00:00.000Z" title="发表于 2021-12-04 00:00:00">2021-12-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'c4b04480f1df15288dc1aa82f331cd20',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
