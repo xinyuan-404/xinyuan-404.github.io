@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python基础(二) | Xinyuan's blog</title><meta name="keywords" content="python"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="python基础(二)程序的基本结构程序流程图用一系列图形、流程线和文字说明描述程序的基本操作和控制流程，它是程序分析和过程描述的最基本方式。  程序由三种基本结构组成： 顺序结构 分支结构 循环结构 这些基本结构都有一个入口和一个出口。任何程序都由这三种基本结构组合而成  顺序结构是程序按照线性顺序依次执行的一种运行方式，其中语句块1和语句块2表示一个或一组顺序执行的语句  分支结构是程序根据条">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础(二)">
+<meta property="og:url" content="http://websec.space/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="python基础(二)程序的基本结构程序流程图用一系列图形、流程线和文字说明描述程序的基本操作和控制流程，它是程序分析和过程描述的最基本方式。  程序由三种基本结构组成： 顺序结构 分支结构 循环结构 这些基本结构都有一个入口和一个出口。任何程序都由这三种基本结构组合而成  顺序结构是程序按照线性顺序依次执行的一种运行方式，其中语句块1和语句块2表示一个或一组顺序执行的语句  分支结构是程序根据条">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg">
+<meta property="article:published_time" content="2021-12-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-20T06:44:55.688Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python基础(二)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-20 14:44:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python基础(二)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-19T16:00:00.000Z" title="发表于 2021-12-20 00:00:00">2021-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-20T06:44:55.688Z" title="更新于 2021-12-20 14:44:55">2021-12-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python基础(二)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="python基础-二"><a href="#python基础-二" class="headerlink" title="python基础(二)"></a>python基础(二)</h1><h2 id="程序的基本结构"><a href="#程序的基本结构" class="headerlink" title="程序的基本结构"></a>程序的基本结构</h2><p>程序流程图用一系列图形、流程线和文字说明描述程序的基本操作和控制流程，它是程序分析和过程描述的最基本方式。</p>
+<p><img src="https://img-blog.csdnimg.cn/2d0deb534583469d972936b39e4a3f4d.png" alt="img"></p>
+<p>程序由三种基本结构组成：</p>
+<p>顺序结构</p>
+<p>分支结构</p>
+<p>循环结构</p>
+<p>这些基本结构都有一个入口和一个出口。任何程序都由这三种基本结构组合而成</p>
+<blockquote>
+<p>顺序结构是程序按照线性顺序依次执行的一种运行方式，其中语句块1和语句块2表示一个或一组顺序执行的语句 </p>
+<p>分支结构是程序根据条件判断结果而选择不同向前执行路径的一种运行方式，包括单分支结构和二分支结构。由二分支结构会组合形成多分支结构</p>
+<p>循环结构是程序根据条件判断结果向后反复执行的一种运行方式，根据循环体触发条件不同，包括条件循环和遍历循环结构</p>
+</blockquote>
+<h2 id="程序的分支结构"><a href="#程序的分支结构" class="headerlink" title="程序的分支结构"></a>程序的分支结构</h2><p>Python中if语句的语法格式如下：</p>
+<p>if &lt;条件&gt;:</p>
+<p>  语句块</p>
+<p>语句块是if条件满足后执行的一个或多个语句序列</p>
+<p>语句块中语句通过与if所在行形成缩进表达包含关系</p>
+<p>if语句首先评估&lt;条件&gt;的结果值，如果结果为True，则执行语句块里的语句序列，然后控制转向程序的下一条语句。如果结果为False，语句块里的语句会被跳过。 </p>
+<h3 id="单分支语句"><a href="#单分支语句" class="headerlink" title="单分支语句"></a>单分支语句</h3><p>if语句中语句块执行与否依赖于条件判断。但无论什么情况，控制都会转到if语句后与该语句同级别的下一条语句 </p>
+<p>if语句中&lt;条件&gt;部分可以使用任何能够产生True或False的语句</p>
+<p>形成判断条件最常见的方式是采用关系操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>数学符号</th>
+<th>操作符含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>&lt;</em></td>
+<td><em>&lt;</em></td>
+<td>小于</td>
+</tr>
+<tr>
+<td><em>&lt;=</em></td>
+<td><em>≤</em></td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td><em>&gt;=</em></td>
+<td><em>≥</em></td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td><em>&gt;</em></td>
+<td><em>&gt;</em></td>
+<td>大于</td>
+</tr>
+<tr>
+<td><em>==</em></td>
+<td><em>=</em></td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!<em>=</em></td>
+<td></td>
+<td>不等于</td>
+</tr>
+</tbody></table>
+<p>二分支结构: if-else语句</p>
+<p>Python中if-else语句用来形成二分支结构，语法格式如下：</p>
+<p>if &lt;条件&gt;:</p>
+<p>  &lt;语句块1&gt;</p>
+<p>else:</p>
+<p>  &lt;语句块2&gt;</p>
+<p>&lt;语句块1&gt;是在if条件满足后执行的一个或多个语句序列</p>
+<p>&lt;语句块2&gt;是if条件不满足后执行的语句序列</p>
+<p>二分支语句用于区分&lt;条件&gt;的两种可能True或者False，分别形成执行路径</p>
+<blockquote>
+<p>二分支结构还有一种更简洁的表达方式，适合通过判断返回特定值，语法格式如下：</p>
+<p>&lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;</p>
+</blockquote>
+<h3 id="多分支结构-if-elif-else语句"><a href="#多分支结构-if-elif-else语句" class="headerlink" title="多分支结构: if-elif-else语句"></a>多分支结构: if-elif-else语句</h3><p>Python的if-elif-else描述多分支结构，语句格式如下：</p>
+<p>if &lt;条件1&gt;:</p>
+<p>​    &lt;语句块1&gt;</p>
+<p>elif &lt;条件2&gt;:</p>
+<p>​    &lt;语句块2&gt;</p>
+<p>… </p>
+<p>else: </p>
+<p>​    &lt;语句块N&gt;</p>
+<p>多分支结构是二分支结构的扩展，这种形式通常用于设置同一个判断条件的多条执行路径。</p>
+<p>Python依次评估寻找第一个结果为True的条件，执行该条件下的语句块，同时结束后跳过整个if-elif-else结构，执行后面的语句。如果没有任何条件成立，else下面的语句块被执行。else子句是可选的 </p>
+<h2 id="程序的循环结构"><a href="#程序的循环结构" class="headerlink" title="程序的循环结构"></a>程序的循环结构</h2><h3 id="遍历循环"><a href="#遍历循环" class="headerlink" title="遍历循环"></a>遍历循环</h3><p>  根据循环执行次数的确定性，循环可以分为确定次数循环和非确定次数循环。确定次数循环指循环体对循环次数有明确的定义，循环次数采用遍历结构中元素个数来体现。</p>
+<p>Python通过保留字for实现“遍历循环” ：</p>
+<p>for &lt;循环变量&gt; in &lt;遍历结构&gt;:</p>
+<p>  &lt;语句块&gt;</p>
+<p>遍历结构可以是字符串、文件、组合数据类型或range()函数：</p>
+<table>
+<thead>
+<tr>
+<th>循环N次  for  i in  range(N):     &lt;语句块&gt;</th>
+<th>遍历文件fi的每一行  for  line in fi:    &lt;语句块&gt;</th>
+<th>遍历字符串s   for  c in s:    &lt;语句块&gt;</th>
+<th>遍历列表ls   for  item in ls:    &lt;语句块&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>遍历循环还有一种扩展模式，使用方法如下：</p>
+<p>for &lt;循环变量&gt; in &lt;遍历结构&gt;:</p>
+<p>​    &lt;语句块1&gt;</p>
+<p>else:</p>
+<p>​    &lt;语句块2&gt;</p>
+<p>当for循环正常执行之后，程序会继续执行else语句中内容。<strong>else语句只在循环正常执行之后才执行并结束，</strong>因此，可以在&lt;语句块2&gt;中放置判断循环执行情况的语句</p>
+<h3 id="无限循环-while语句"><a href="#无限循环-while语句" class="headerlink" title="无限循环: while语句"></a>无限循环: while语句</h3><p>无限循环：</p>
+<p>无限循环一直保持循环操作直到特定循环条件不被满足才结束，不需要提前知道确定循环次数。</p>
+<p>Python通过保留字while实现无限循环，使用方法如下：</p>
+<p>while &lt;条件&gt;:</p>
+<p>​    &lt;语句块&gt;</p>
+<p>无限循环也有一种使用保留字else的扩展模式，else语句只在循环正常执行之后才执行：</p>
+<p>while &lt;条件&gt;:</p>
+<p>​    &lt;语句块1&gt;</p>
+<p>else:</p>
+<p>​    &lt;语句块2&gt;</p>
+<h3 id="循环保留字-break和continue"><a href="#循环保留字-break和continue" class="headerlink" title="循环保留字: break和continue"></a>循环保留字: break和continue</h3><p>循环结构有两个辅助保留字：break和continue，它们用来辅助控制循环执行</p>
+<p>break用来跳出最内层for或while循环，脱离该循环后程序从循环后代码继续执行 </p>
+<blockquote>
+<p>其中，break语句跳出了最内层for循环，但仍然继续执行外层循环。每个break语句只有能力跳出当前层次循环 </p>
+</blockquote>
+<p>continue用来结束当前当次循环，即跳出循环体中下面尚未执行的语句，但不跳出当前循环。</p>
+<p>对于while循环，继续求解循环条件。而对于for循环，程序流程接着遍历循环列表</p>
+<blockquote>
+<p>continue语句和break语句的区别是：</p>
+<p>continue语句只结束本次循环，而不终止整个循环的执行。</p>
+<p>break语句则是结束整个循环过程，不再判断执行循环的条件是否成立</p>
+</blockquote>
+<p>for循环和while循环中都存在一个else扩展用法。</p>
+<p>else中的语句块只在一种条件下执行，即循环正常遍历了所有内容没有因为break或return而退出。</p>
+<p>continue保留字对else没有影响。</p>
+<h2 id="random库概述"><a href="#random库概述" class="headerlink" title="random库概述"></a>random库概述</h2><p>随机数在计算机应用中十分常见，Python内置的random库主要用于产生各种分布的伪随机数序列。random库采用梅森旋转算法（Mersenne twister）生成伪随机数序列，可用于除随机性要求更高的加解密算法外的大多数工程应用。</p>
+<p>使用random库主要目的是生成随机数，因此，读者只需要查阅该库的随机数生成函数，找到符合使用场景的函数使用即可。这个库提供了不同类型的随机数函数，所有函数都是基于最基本的random.random()函数扩展而来。</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>seed(a=None)</td>
+<td>初始化随机数种子，默认值为当前系统时间</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>生成一个[0.0,  1.0)之间的随机小数</td>
+</tr>
+<tr>
+<td>randint(a, b)</td>
+<td>生成一个[a,b]之间的整数</td>
+</tr>
+<tr>
+<td>getrandbits(k)</td>
+<td>生成一个k比特长度的随机整数</td>
+</tr>
+<tr>
+<td>randrange(start, stop[, step])</td>
+<td>生成一个[start,  stop)之间以step为步数的随机整数</td>
+</tr>
+<tr>
+<td>uniform(a, b)</td>
+<td>生成一个[a,  b]之间的随机小数</td>
+</tr>
+<tr>
+<td>choice(seq)</td>
+<td>从序列类型(例如：列表)中随机返回一个元素</td>
+</tr>
+<tr>
+<td>shuffle(seq)</td>
+<td>将序列类型中元素随机排列，返回打乱后的序列</td>
+</tr>
+<tr>
+<td>sample(pop, k)</td>
+<td>从pop类型中随机选取k个元素，以列表类型返回</td>
+</tr>
+</tbody></table>
+<p>生成随机数之前可以通过seed()函数指定随机数种子，随机种子一般是一个整数，只要种子相同，每次生成的随机数序列也相同。这种情况便于测试和同步数据</p>
+<blockquote>
+<p>好一个序列密码</p>
+</blockquote>
+<h2 id="程序的异常处理"><a href="#程序的异常处理" class="headerlink" title="程序的异常处理"></a>程序的异常处理</h2><p>初学不必太过于计较这个地方</p>
+<blockquote>
+<p>Python异常信息中最重要的部分是异常类型，它表明了发生异常的原因，也是程序处理异常的依据。</p>
+<p>Python使用try-except语句实现异常处理，基本的语法格式如下：</p>
+<p>try:</p>
+<p> &lt;语句块1&gt;</p>
+<p>except &lt;异常类型&gt;:</p>
+<p> &lt;语句块2&gt;</p>
+</blockquote>
+<p>try 语句的工作原理如下：</p>
+<p>首先，执行 try 子句的语句块。</p>
+<p>如果没有异常发生，则跳过 except 子句。</p>
+<p>如果发生了异常，则跳过 try 子句中剩余的语句部分。然后，如果异常类型和 except 关键字后面的异常类型匹配（同一个类或者是它的基类），则执行 except 子句的语句块。</p>
+<p>如果发生的异常和 except 子句中的异常不匹配，则将其传递到外部的 try 语句中；如果没有找到处理程序，则它是一个未处理异常，执行将停止并显示异常信息。</p>
+<blockquote>
+<p>NameError </p>
+<p>ZeroDivisionError</p>
+<p>TypeError</p>
+<p>SyntaxError</p>
+<p>IndexError  索引超出序列范围</p>
+<p>KeyError  请求一个不存在的字典关键字</p>
+<p>IOError    输入输出错误</p>
+<p>AttributeError  尝试访问未知的对象属性</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/">http://websec.space/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"><img class="prev-cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.93edeca49030bebad015acbe889c64d9?rik=bZaGqTWd89Xndg&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2fda2e4e134e90af808f0bee4559c4b682.jpg&amp;ehk=KdvRPO4t5XRgiZxh4OZYLuU%2bOgWklEKxsIZBGAz68Iw%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python基础函数的基本使用</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/18/python%E5%9F%BA%E7%A1%80/"><img class="next-cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.2200f336cb7cc8f21798e7d9fe9b24f5?rik=6HjanVulzGkvpA&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2f080145c3a7460e7fa0369052a11467db.jpg&amp;ehk=ffhPqQk04pZ18gOXu3OrPfkEIoQW046d4EfbUzji9yI%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python基础(一)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="python基础函数的基本使用"><img class="cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.93edeca49030bebad015acbe889c64d9?rik=bZaGqTWd89Xndg&riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2fda2e4e134e90af808f0bee4559c4b682.jpg&ehk=KdvRPO4t5XRgiZxh4OZYLuU%2bOgWklEKxsIZBGAz68Iw%3d&risl=&pid=ImgRaw&r=0" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-21</div><div class="title">python基础函数的基本使用</div></div></a></div><div><a href="/2021/12/18/python%E5%9F%BA%E7%A1%80/" title="python基础(一)"><img class="cover" src="https://tse1-mm.cn.bing.net/th/id/R-C.2200f336cb7cc8f21798e7d9fe9b24f5?rik=6HjanVulzGkvpA&riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2f080145c3a7460e7fa0369052a11467db.jpg&ehk=ffhPqQk04pZ18gOXu3OrPfkEIoQW046d4EfbUzji9yI%3d&risl=&pid=ImgRaw&r=0" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-18</div><div class="title">python基础(一)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E5%9F%BA%E7%A1%80-%E4%BA%8C"><span class="toc-number">1.</span> <span class="toc-text">python基础(二)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">程序的基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">程序的分支结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text">单分支语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84-if-elif-else%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">多分支结构: if-elif-else语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">程序的循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">遍历循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF-while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.2.</span> <span class="toc-text">无限循环: while语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BF%9D%E7%95%99%E5%AD%97-break%E5%92%8Ccontinue"><span class="toc-number">1.3.3.</span> <span class="toc-text">循环保留字: break和continue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#random%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.</span> <span class="toc-text">random库概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">程序的异常处理</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="python基础函数的基本使用"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.93edeca49030bebad015acbe889c64d9?rik=bZaGqTWd89Xndg&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2fda2e4e134e90af808f0bee4559c4b682.jpg&amp;ehk=KdvRPO4t5XRgiZxh4OZYLuU%2bOgWklEKxsIZBGAz68Iw%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python基础函数的基本使用"/></a><div class="content"><a class="title" href="/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="python基础函数的基本使用">python基础函数的基本使用</a><time datetime="2021-12-20T16:00:00.000Z" title="发表于 2021-12-21 00:00:00">2021-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/" title="python基础(二)"><img src="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python基础(二)"/></a><div class="content"><a class="title" href="/2021/12/20/python%E5%9F%BA%E7%A1%80(%E4%BA%8C)/" title="python基础(二)">python基础(二)</a><time datetime="2021-12-19T16:00:00.000Z" title="发表于 2021-12-20 00:00:00">2021-12-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/18/python%E5%9F%BA%E7%A1%80/" title="python基础(一)"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.2200f336cb7cc8f21798e7d9fe9b24f5?rik=6HjanVulzGkvpA&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fscenery%2f20170107%2f080145c3a7460e7fa0369052a11467db.jpg&amp;ehk=ffhPqQk04pZ18gOXu3OrPfkEIoQW046d4EfbUzji9yI%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python基础(一)"/></a><div class="content"><a class="title" href="/2021/12/18/python%E5%9F%BA%E7%A1%80/" title="python基础(一)">python基础(一)</a><time datetime="2021-12-17T16:00:00.000Z" title="发表于 2021-12-18 00:00:00">2021-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/" title="密码学之理论篇(密钥管理)"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.a828b40fc16468cc13722a358cab561d?rik=aN0Dz2tL5fHVPA&amp;riu=http%3a%2f%2fwww.desktx.com%2fd%2ffile%2fwallpaper%2fspace%2f20180521%2f3a5c35bab7d1a105597e0d35b33d592b.jpg&amp;ehk=WuF4ITq%2bz3LW7wBWbhBl78hPTCbpVcEal%2f%2fjl9vjOZg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之理论篇(密钥管理)"/></a><div class="content"><a class="title" href="/2021/12/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E5%AF%86%E9%92%A5%E7%AE%A1%E7%90%86)/" title="密码学之理论篇(密钥管理)">密码学之理论篇(密钥管理)</a><time datetime="2021-12-12T16:00:00.000Z" title="发表于 2021-12-13 00:00:00">2021-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/" title="密码学之理论篇(认证理论与技术)"><img src="https://up.enterdesk.com/photo/2012-3-16/enterdesk.com-698A0F2F1D9370844843D32CED3B91F6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学之理论篇(认证理论与技术)"/></a><div class="content"><a class="title" href="/2021/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87(%E8%AE%A4%E8%AF%81%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%80%E6%9C%AF)/" title="密码学之理论篇(认证理论与技术)">密码学之理论篇(认证理论与技术)</a><time datetime="2021-12-11T16:00:00.000Z" title="发表于 2021-12-12 00:00:00">2021-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'a99d11c57eb6cac2fa0e5e12e39d36c2',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
