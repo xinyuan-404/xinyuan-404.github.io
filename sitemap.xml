@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://websec.space/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/</loc>
+    
+    <lastmod>2021-12-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://websec.space/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2021-12-20</lastmod>
@@ -130,7 +137,7 @@
 
   <url>
     <loc>http://websec.space/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,28 +145,28 @@
   
   <url>
     <loc>http://websec.space/tags/%E9%97%B2%E8%81%8A/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/python/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -168,28 +175,28 @@
   
   <url>
     <loc>http://websec.space/categories/%E9%97%B2%E8%81%8A/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/python/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2021-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

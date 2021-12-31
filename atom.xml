@@ -6,7 +6,7 @@
   <link href="http://websec.space/atom.xml" rel="self"/>
   
   <link href="http://websec.space/"/>
-  <updated>2021-12-20T06:51:27.528Z</updated>
+  <updated>2021-12-31T17:46:27.856Z</updated>
   <id>http://websec.space/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://websec.space/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>http://websec.space/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/</id>
+    <published>2021-12-31T17:39:02.812Z</published>
+    <updated>2021-12-31T17:46:27.856Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><p>新的一年，更加努力与坚持，更加灵活，不断向前，加油吧！</p><p>今年是我在安全领域的第一年，回想过去一年所经历的比赛，仿佛都历历在目，本想归纳记录一下，奈何太懒了，今天是2020.01.01，首先祝大家新年快乐吖！</p><p>现在来盘点记录一下今年在安全领域所经历的比较记忆犹新的事情，也感谢各位在这条路上一直帮助我的老师和同学，新的一年，大家继续努力。</p><h1 id="2021年寒假线上实训"><a href="#2021年寒假线上实训" class="headerlink" title="2021年寒假线上实训"></a>2021年寒假线上实训</h1><p>结识了杨老师，并且在老师的指导下，开始了在暗网方面的相关研究工作。</p><h1 id="ciscn作品赛"><a href="#ciscn作品赛" class="headerlink" title="ciscn作品赛"></a>ciscn作品赛</h1><p>第一次参加国赛，也是第一次做安全研发，大一上主要参加两个比赛，第一次参赛，也是误打误撞就进了决赛，继续准备调试，做了许多遍，在即将启程出发青岛参加决赛时，疫情反复，在出发的前一天比赛取消了，推迟（今年可能令许多安全参赛同学最无奈的就是疫情吧）。</p><p>在暑假过去一半的时候草草回家，等待比赛的时期</p><img src="https://img-blog.csdnimg.cn/4744627185fc453da9f64e94ac8ccce7.png" alt="img" style="zoom: 33%;" /><p>最后被分到总体做的还算比较满意，最后系统也实现了，答辩也回答了老师们的问题。</p><img src="https://img-blog.csdnimg.cn/2b9e6b0d1a784965aab91b002815c2f7.png" alt="img" style="zoom:50%;" /><h2 id="尖峰训练营"><a href="#尖峰训练营" class="headerlink" title="尖峰训练营"></a>尖峰训练营</h2><p>2021年开始立项的第一个项目，也是让我经历从一个小白到真正入门的第一个项目，见证了开发一个安全产品的全过程。</p><p>附一张决赛时的图片，也是第一次出去打比赛，武汉很爱。</p><img src="https://img-blog.csdnimg.cn/284eb45e8486456cb5eff823deeb022d.png" alt="img" style="zoom: 50%;" /><img src="https://img-blog.csdnimg.cn/7ad5ef24b98342d9b0bf88ca599c49e5.png" alt="img" style="zoom:50%;" /><p>待遇也很爱，宾馆很好，早餐也很爱。</p><img src="https://img-blog.csdnimg.cn/3f35b6b70af648208025f0d98b78c6d7.png" alt="img" style="zoom:50%;" /><img src="C:\Users\97085\AppData\Roaming\Typora\typora-user-images\image-20220101010208749.png" alt="image-20220101010208749" style="zoom:50%;" /><img src="https://img-blog.csdnimg.cn/f4e424b644f647f78ca050074fe2137a.png" alt="img" style="zoom:50%;" /><p>最后拿到了团队赛二等奖，前四的成绩哈哈哈，也算让自己在安全领域慢慢建立起了信心。</p><img src="https://img-blog.csdnimg.cn/6af1f74ad56245fe8c46dbd092650bad.png" alt="img" style="zoom:50%;" /><p>感谢老师们的支持，也感谢洁哥此处@brey在关键时刻提供的支持，多少次感觉要放弃时，洁哥的关键建议总能成为不断推进的可行方案。</p><p>也第一次接触了龙芯，也做了一些比较创新的小操作，想想还是蛮有趣的。</p><h2 id="网络运维纳新"><a href="#网络运维纳新" class="headerlink" title="网络运维纳新"></a>网络运维纳新</h2><p>可能大学都有那么几个地方，有一帮志同道合的朋友，又到了一年的开学季，网络运维开始纳新，准备很多哈哈</p><p>看到了形形色色的新同学，有时候也感慨自己技术好菜，不及很多大一的同学，忙忙碌碌两个月网络运维也算完成新的一年的组建。</p><img src="C:\Users\97085\AppData\Roaming\Typora\typora-user-images\image-20220101012151788.png" alt="image-20220101012151788" style="zoom:33%;" /><h2 id="穹镜SkyMirror成立"><a href="#穹镜SkyMirror成立" class="headerlink" title="穹镜SkyMirror成立"></a>穹镜SkyMirror成立</h2><p>马工的推荐下，正式以穹镜SkyMirror，穹镜的成立也形成工大又一个崭新的安全圈子，正如在组建的时候所说，穹镜安全所展开的面很广，按照大家兴趣去做自己的方向，新的一年穹镜加油。</p><p>（安全组:想在互联网上成为一名漏洞猎人吗,想为打击互联网黑产奉献一份力量吗,想成为一名帅气的 CTFer 吗?我们有奋斗于安全一线的 Hacker ,或痴迷用代码改变世界 Programmer ,亦不乏潜心钻研的 Geeker 。我们始终不安一偶,崇尚技术,不断在信息安全的传统界线上寻求挑战和突破。在这里有咱们运维部门的安全工程师,也有不断努力学习的学长,加入我们,共同努力,大家一起变得更强。）</p><h2 id="美亚杯”第七届中国电子数据取证大赛"><a href="#美亚杯”第七届中国电子数据取证大赛" class="headerlink" title="美亚杯”第七届中国电子数据取证大赛"></a>美亚杯”第七届中国电子数据取证大赛</h2><p>被百度云和硬盘搞心态的一个比赛，也算是穹镜在组建以后大家参加的第一个比赛。</p><p>有时候下载一个晚上第二天发现</p><img src="https://img-blog.csdnimg.cn/7a6e6031283a496989bc3580db9ce2ea.png" alt="img" style="zoom:33%;" /><p>网不行就上千兆网，盘不行就加盘</p><img src="https://img-blog.csdnimg.cn/52e23ef0990c46118d185edfa7f5235c.png" alt="img" style="zoom: 33%;" /><p>也非常感谢老师在这次比赛中给的帮助，咱急需硬盘的时候，老师直接给送来了笔记本，保证能人手一个比赛设备，虽然最后检材没预期那么大。</p><p>开赛当天真的是一头雾水，解压密码被&lt;&gt;给闭合了，前半个小时心态不太好，结果打完资格赛结果出乎意料的不错。</p><p>有了资格赛的信心，团队赛打的相对更加自信，也更有张力。</p><p>最后鑫缘竟然拿了资格赛一等奖（属实出乎意料，之前接触取证不多），穹镜参加的两支队都拿到了一等奖。</p><h2 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h2><p>继续坚持走自己的路，明年的元旦，可能已经要开始准备考研了，明年也要慢慢扩充穹在各个安全方向的人员，马工的回归肯定能让穹镜更加强大，也更希望能够想加入我们一起玩安全的好兄弟。</p><p>在做安全的这条路上，不玩虚的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新年快乐&quot;&gt;&lt;a href=&quot;#新年快乐&quot; class=&quot;headerlink&quot; title=&quot;新年快乐&quot;&gt;&lt;/a&gt;新年快乐&lt;/h1&gt;&lt;p&gt;新的一年，更加努力与坚持，更加灵活，不断向前，加油吧！&lt;/p&gt;
+&lt;p&gt;今年是我在安全领域的第一年，回想过去一年所经历的比赛，</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>python基础函数的基本使用</title>
