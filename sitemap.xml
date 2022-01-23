@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://websec.space/2021/12/21/HTTP%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2022-01-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://websec.space/2022/01/18/CTF-RSA/</loc>
     
     <lastmod>2022-01-23</lastmod>
