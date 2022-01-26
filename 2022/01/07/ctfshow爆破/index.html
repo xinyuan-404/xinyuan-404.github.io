@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>萌新题wp(上篇) | Xinyuan's blog</title><meta name="keywords" content="wp"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ctfshow爆破开始玩 web21 爆破什么的，都是基操  确实是基操，下面演示两种方法。这题是个tomcat的认证。 法一：bp的intruder  确定好爆破位置，选择类型Custom iterator  导入题目给的附件，进行base64编码，开始攻击！  找到相应长度最异常的包，发现flag  法二： python脚本，这里贴出官方给的（主要自己懒得去写了） 12345678910111">
+<meta property="og:type" content="article">
+<meta property="og:title" content="萌新题wp(上篇)">
+<meta property="og:url" content="http://websec.space/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="ctfshow爆破开始玩 web21 爆破什么的，都是基操  确实是基操，下面演示两种方法。这题是个tomcat的认证。 法一：bp的intruder  确定好爆破位置，选择类型Custom iterator  导入题目给的附件，进行base64编码，开始攻击！  找到相应长度最异常的包，发现flag  法二： python脚本，这里贴出官方给的（主要自己懒得去写了） 12345678910111">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png">
+<meta property="article:published_time" content="2022-01-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-26T03:16:22.039Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '萌新题wp(上篇)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-26 11:16:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">萌新题wp(上篇)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-06T16:00:00.000Z" title="发表于 2022-01-07 00:00:00">2022-01-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-26T03:16:22.039Z" title="更新于 2022-01-26 11:16:22">2022-01-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/wp/">wp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="萌新题wp(上篇)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="ctfshow爆破"><a href="#ctfshow爆破" class="headerlink" title="ctfshow爆破"></a>ctfshow爆破</h1><p>开始玩</p>
+<h2 id="web21"><a href="#web21" class="headerlink" title="web21"></a>web21</h2><blockquote>
+<p>爆破什么的，都是基操</p>
+</blockquote>
+<p>确实是基操，下面演示两种方法。这题是个tomcat的认证。</p>
+<p>法一：bp的intruder</p>
+<p><img src="https://img-blog.csdnimg.cn/fb5a6dc0f46747918903fac9c87a495f.png" alt="img" style="zoom:80%;" /><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>确定好爆破位置，选择类型Custom iterator</p>
+<p><img src="https://img-blog.csdnimg.cn/906e644163734867a9a572c55b14303b.png" alt="img"></p>
+<p>导入题目给的附件，进行base64编码，开始攻击！</p>
+<p><img src="https://img-blog.csdnimg.cn/0a99e2128f6449e8918fb083ae0da5b7.png" alt="img"></p>
+<p>找到相应长度最异常的包，发现flag</p>
+<p><img src="https://img-blog.csdnimg.cn/32704e370229479293561c3006cb4adb.png" alt="img"></p>
+<p>法二：</p>
+<p>python脚本，这里贴出官方给的（主要自己懒得去写了）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://41a801fe-a420-47bc-8593-65c3f26b7efa.chall.ctf.show/index.php&#x27;</span></span><br><span class="line"></span><br><span class="line">password = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;1.txt&quot;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:  </span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	    data = f.readline() </span><br><span class="line">	    <span class="keyword">if</span> data:</span><br><span class="line">	    	password.append(data)</span><br><span class="line">	    <span class="keyword">else</span>:</span><br><span class="line">	      <span class="keyword">break</span></span><br><span class="line">	    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> password:</span><br><span class="line">	strs = <span class="string">&#x27;admin:&#x27;</span>+ p[:-<span class="number">1</span>]</span><br><span class="line">	header=&#123;</span><br><span class="line">		<span class="string">&#x27;Authorization&#x27;</span>:<span class="string">&#x27;Basic &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(base64.b64encode(strs.encode(<span class="string">&#x27;utf-8&#x27;</span>)).decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">	&#125;</span><br><span class="line">	rep =requests.get(url,headers=header)</span><br><span class="line">	time.sleep(<span class="number">0.2</span>)</span><br><span class="line">	<span class="keyword">if</span> rep.status_code ==<span class="number">200</span>:</span><br><span class="line">		<span class="built_in">print</span>(rep.text)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line">		</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="web22"><a href="#web22" class="headerlink" title="web22"></a>web22</h2><blockquote>
+<p>域名也可以爆破的，试试爆破这个ctf.show的子域名</p>
+</blockquote>
+<p>直接拿着Layer开扫，结果扫了半天没看见flag相关的信息，看了hint，访问了一下flag.ctf.show挂了，交了flag跑路。</p>
+<p><img src="https://img-blog.csdnimg.cn/3a06bc7471cb4bddbfb3397e36d88733.png" alt="img"></p>
+<h2 id="web23"><a href="#web23" class="headerlink" title="web23"></a>web23</h2><blockquote>
+<p>还爆破？这么多代码，告辞！</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">error_reporting(0);</span><br><span class="line"></span><br><span class="line">include(&#x27;flag.php&#x27;);</span><br><span class="line">if(isset($_GET[&#x27;token&#x27;]))&#123;</span><br><span class="line">    $token = md5($_GET[&#x27;token&#x27;]);</span><br><span class="line">    if(substr($token, 1,1)===substr($token, 14,1) &amp;&amp; substr($token, 14,1) ===substr($token, 17,1))&#123;</span><br><span class="line">        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1)))&#123;</span><br><span class="line">            echo $flag;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这次得写个python了，跑一下md5后token的值</p>
+<p>跑长度为二应该就行，写两重for循环，也是只判断一个条件就可，跑出来多个值最后3j可！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line">dic = &#x27;0123456789qazwsxedcrfvtgbyhnujmikolp&#x27;</span><br><span class="line">md5 = hashlib.md5(dic.encode(encoding=&#x27;UTF-8&#x27;)).hexdigest()</span><br><span class="line">for a in dic:</span><br><span class="line">    for b in dic:</span><br><span class="line">        t = str(a)+str(b)</span><br><span class="line">        md5 = hashlib.md5(t.encode(encoding=&#x27;UTF-8&#x27;)).hexdigest()</span><br><span class="line">        if md5[1:2] == md5[14:15] and md5[14:15]== md5[17:18]:</span><br><span class="line">            print(t)</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+
+<h2 id="web24"><a href="#web24" class="headerlink" title="web24"></a>web24</h2><blockquote>
+<p>爆个🔨</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/fc638926f8ae4c8284cf4025192acc7c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>mt_srand()是根据种子产生随机数的随机函数，再本地部署一下</p>
+<p><img src="https://img-blog.csdnimg.cn/5fa348e580514ac292cb1c52e94f06dc.png" alt="img"></p>
+<p>发现竟然和php版本有关系</p>
+<p><img src="https://img-blog.csdnimg.cn/9369384099314dd8be5e9d3c31be4d7f.png" alt="img"></p>
+<p>传参拿到flag</p>
+<h2 id="web25"><a href="#web25" class="headerlink" title="web25"></a>web25</h2><blockquote>
+<p>爆个🔨，不爆了</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;r&#x27;</span>]))&#123;</span><br><span class="line">    <span class="variable">$r</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;r&#x27;</span>];</span><br><span class="line">    mt_srand(hexdec(substr(md5(<span class="variable">$flag</span>), <span class="number">0</span>,<span class="number">8</span>)));</span><br><span class="line">    <span class="variable">$rand</span> = intval(<span class="variable">$r</span>)-intval(mt_rand());</span><br><span class="line">    <span class="keyword">if</span>((!<span class="variable">$rand</span>))&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$_COOKIE</span>[<span class="string">&#x27;token&#x27;</span>]==(mt_rand()+mt_rand()))&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$rand</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">    <span class="keyword">echo</span> system(<span class="string">&#x27;cat /proc/version&#x27;</span>);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>有点复杂</p>
+<p>根据下面这条语句，将r=0查看第一次mt_rand()值的大小。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$rand = intval($r)-intval(mt_rand());</span><br></pre></td></tr></table></figure>
+
+<p>获得值1437571926(每次都不一样），百度mt_rand()发现可以倒推，然后搞脚本</p>
+<p><img src="https://img-blog.csdnimg.cn/45691245894e42f387a87abd0a798289.png" alt="img"></p>
+<p>解出了种子379528259</p>
+<p>成功解出两个的值</p>
+<p>1437571926<br>3521708304</p>
+<p>搞定，新知识get</p>
+<h2 id="web26"><a href="#web26" class="headerlink" title="web26"></a>web26</h2><blockquote>
+<p>这个可以爆</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/bd7e444d6d1543b483824a76c9cc8ab9.png" alt="img"></p>
+<p>应该是直接爆他数据库开整，bp启动</p>
+<p>爆破出密码7758521</p>
+<h2 id="web27"><a href="#web27" class="headerlink" title="web27"></a>web27</h2><blockquote>
+<p>CTFshow菜鸡学院招生啦！</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/05db4f87f238445296df23de920245f6.png" alt="img"></p>
+<p>想起来一些不好的事情，点击录取名单</p>
+<p><img src="https://img-blog.csdnimg.cn/706638a78b1842c5a74760f905d4001d.png" alt="img"></p>
+<p>直接去查询系统爆破</p>
+<p><img src="https://img-blog.csdnimg.cn/3577f0e1135849f385ba7b1e867f9aa8.png" alt="img"></p>
+<p>拿下解码</p>
+<p><img src="https://img-blog.csdnimg.cn/ae13ae15863c4ab48e9db0e8ff91f765.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/e35d963859dc45c8b06a225ba6c3877f.png" alt="img"></p>
+<h2 id="web28"><a href="#web28" class="headerlink" title="web28"></a>web28</h2><blockquote>
+<p>大海捞针</p>
+</blockquote>
+<p>明显的目录遍历，直接用bp自带的目录遍历功能发现好像不太行</p>
+<p>刚才文件的结构爆破0/0-100试试不行</p>
+<p>然后爆破0-100/0-100</p>
+<p><img src="https://img-blog.csdnimg.cn/b4da789abf004ca096e2be50336e3ecc.png" alt="img"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/">http://websec.space/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/wp/">wp</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/07/%E8%90%8C%E6%96%B0%E9%A2%98wp/"><img class="prev-cover" src="https://img-blog.csdnimg.cn/3f38cfec623e4b28946a037c02aca0ca.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">萌新题wp(上篇)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"><img class="next-cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.tukuppt.com%2Fpng_preview%2F00%2F35%2F65%2FK3L3SnCFDl.jpg%21%2Ffw%2F780&amp;refer=http%3A%2F%2Fimg.tukuppt.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1643565004&amp;t=6e1da60e8980a74ad927afb62df5a9b8" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">新年快乐</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/07/%E8%90%8C%E6%96%B0%E9%A2%98wp/" title="萌新题wp(上篇)"><img class="cover" src="https://img-blog.csdnimg.cn/3f38cfec623e4b28946a037c02aca0ca.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-07</div><div class="title">萌新题wp(上篇)</div></div></a></div><div><a href="/2022/01/25/ctfshow%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" title="web入门之信息搜集"><img class="cover" src="https://img-blog.csdnimg.cn/ba56d9eb6f0440f3b127a393bc675c26.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-25</div><div class="title">web入门之信息搜集</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ctfshow%E7%88%86%E7%A0%B4"><span class="toc-number">1.</span> <span class="toc-text">ctfshow爆破</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web21"><span class="toc-number">1.1.</span> <span class="toc-text">web21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web22"><span class="toc-number">1.2.</span> <span class="toc-text">web22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web23"><span class="toc-number">1.3.</span> <span class="toc-text">web23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web24"><span class="toc-number">1.4.</span> <span class="toc-text">web24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web25"><span class="toc-number">1.5.</span> <span class="toc-text">web25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web26"><span class="toc-number">1.6.</span> <span class="toc-text">web26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web27"><span class="toc-number">1.7.</span> <span class="toc-text">web27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web28"><span class="toc-number">1.8.</span> <span class="toc-text">web28</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/25/ctfshow%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" title="web入门之信息搜集"><img src="https://img-blog.csdnimg.cn/ba56d9eb6f0440f3b127a393bc675c26.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web入门之信息搜集"/></a><div class="content"><a class="title" href="/2022/01/25/ctfshow%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" title="web入门之信息搜集">web入门之信息搜集</a><time datetime="2022-01-24T16:00:00.000Z" title="发表于 2022-01-25 00:00:00">2022-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/18/CTF-RSA/" title="CTF-RSA(一)"><img src="https://img-blog.csdnimg.cn/0d238f027664437ea2204957f4e14acb.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CTF-RSA(一)"/></a><div class="content"><a class="title" href="/2022/01/18/CTF-RSA/" title="CTF-RSA(一)">CTF-RSA(一)</a><time datetime="2022-01-17T16:00:00.000Z" title="发表于 2022-01-18 00:00:00">2022-01-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/07/%E8%90%8C%E6%96%B0%E9%A2%98wp/" title="萌新题wp(上篇)"><img src="https://img-blog.csdnimg.cn/3f38cfec623e4b28946a037c02aca0ca.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="萌新题wp(上篇)"/></a><div class="content"><a class="title" href="/2022/01/07/%E8%90%8C%E6%96%B0%E9%A2%98wp/" title="萌新题wp(上篇)">萌新题wp(上篇)</a><time datetime="2022-01-06T16:00:00.000Z" title="发表于 2022-01-07 00:00:00">2022-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/" title="萌新题wp(上篇)"><img src="https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="萌新题wp(上篇)"/></a><div class="content"><a class="title" href="/2022/01/07/ctfshow%E7%88%86%E7%A0%B4/" title="萌新题wp(上篇)">萌新题wp(上篇)</a><time datetime="2022-01-06T16:00:00.000Z" title="发表于 2022-01-07 00:00:00">2022-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/" title="新年快乐"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.tukuppt.com%2Fpng_preview%2F00%2F35%2F65%2FK3L3SnCFDl.jpg%21%2Ffw%2F780&amp;refer=http%3A%2F%2Fimg.tukuppt.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1643565004&amp;t=6e1da60e8980a74ad927afb62df5a9b8" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新年快乐"/></a><div class="content"><a class="title" href="/2022/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/" title="新年快乐">新年快乐</a><time datetime="2021-12-31T16:00:00.000Z" title="发表于 2022-01-01 00:00:00">2022-01-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'e375141333b1ad500343b09e2b027db1',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
