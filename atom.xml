@@ -6,7 +6,7 @@
   <link href="http://websec.space/atom.xml" rel="self"/>
   
   <link href="http://websec.space/"/>
-  <updated>2022-02-14T16:49:31.591Z</updated>
+  <updated>2022-02-24T03:32:51.274Z</updated>
   <id>http://websec.space/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅聊</title>
+    <link href="http://websec.space/2022/02/24/%E6%B5%85%E8%81%8A%E4%B8%80%E4%B8%8B%E6%96%87%E5%8C%96%E8%AF%BE%E5%92%8C%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
+    <id>http://websec.space/2022/02/24/%E6%B5%85%E8%81%8A%E4%B8%80%E4%B8%8B%E6%96%87%E5%8C%96%E8%AF%BE%E5%92%8C%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B3%E7%B3%BB/</id>
+    <published>2022-02-23T16:00:00.000Z</published>
+    <updated>2022-02-24T03:32:51.274Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="浅聊"><a href="#浅聊" class="headerlink" title="浅聊"></a>浅聊</h1><blockquote><p>今天四级出分，没过，有些意料之中，但查到的那一刻还是有些出乎意料的，正好刚查完分数，家里突然没电了，不知道为甚么最近老是跳闸，趁着这回断网断电，我当是写一个记录。</p></blockquote><p>​        有几个朋友问我怎么回事难受，我都是回复感觉还好，我心里也清楚，我当时的水平就是再及格线的边缘的，借此挂科一门（还有补考，不算挂科，薛定谔的挂科），四级没过的成就达成。（现在倒是够乐观）。</p><p>​        借此记录一下学习成绩的转变，大一一年绩点还是年纪第四，当时还有竞赛成绩加持感觉风光无限。也是从大一下，到大二上我整个人的思维发生了转变，从之前一个做题家（还是个不合格的做题家）到技术流的转变（也是个不合格的技术流），但学习的思维确实发生了很大的转变，我没想到的是能这么快在成绩上展现，确实脑袋朦朦胧胧的。怎么说呢，我之前一直是一个中立的思维，也就是这种中立的思维让我有点极端，我平时时间都拿来搞自己感兴趣的东西了，所以指望着期末突击，而上一个学期又恰恰是大学四年中课程最多的一个学期，整整十一门（一会如果如果可以我在下面附一下课表），最后突击就从高分变成了不挂科，同时这时候考四级，导致直接放弃了四级的复习，到了四级考试的前一天我才做了几份之前买的题。众多客观原因再此，尽管我认为我主观上已经尽力了，也是无力回天了，毕竟不是什么神人。</p><p>​        这是一个坏事情又是一个好事情，坏事情是确实又挂了科又没过四级，好事情是我包袱没了，终于不用考虑什么我这周一直搞ctf是不是上课的东西没学影响我期末成绩，这个包袱是彻底放下了。上个学期是搞web的开局，走了很多弯路，但跌跌撞撞让我找到方向了，但也认识到好像还差的好远，那天从聊天中也能看到，我真的差的有点多，寒假算是开始了一些东西，但可能把战线拉得有点太长了，开学要好好坚持住一个方向搞深一点，当然下学期课程也变少了，我也要拿出一定精力去学英语，争取搞一手500+。</p><p>​        </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;浅聊&quot;&gt;&lt;a href=&quot;#浅聊&quot; class=&quot;headerlink&quot; title=&quot;浅聊&quot;&gt;&lt;/a&gt;浅聊&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;今天四级出分，没过，有些意料之中，但查到的那一刻还是有些出乎意料的，正好刚查完分数，家里突然没电了，不知道为甚么最</summary>
+      
+    
+    
+    
+    <category term="闲聊" scheme="http://websec.space/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+    <category term="闲聊" scheme="http://websec.space/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>VNCTF Ezmath</title>
@@ -465,30 +490,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;密码学之理论篇（非对称密码体制）&quot;&gt;&lt;a href=&quot;#密码学之理论篇（非对称密码体制）&quot; class=&quot;headerlink&quot; title=&quot;密码学之理论篇（非对称密码体制）&quot;&gt;&lt;/a&gt;密码学之理论篇（非对称密码体制）&lt;/h1&gt;&lt;p&gt;非对称密码体制中的经典算法—</summary>
-      
-    
-    
-    
-    <category term="密码学" scheme="http://websec.space/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-    
-    <category term="密码学" scheme="http://websec.space/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学理论篇之序列密码体制</title>
-    <link href="http://websec.space/2021/12/08/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/"/>
-    <id>http://websec.space/2021/12/08/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%88%E5%BA%8F%E5%88%97%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%EF%BC%89/</id>
-    <published>2021-12-07T16:00:00.000Z</published>
-    <updated>2021-12-10T08:52:15.856Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="密码学理论篇之序列密码体制"><a href="#密码学理论篇之序列密码体制" class="headerlink" title="密码学理论篇之序列密码体制"></a>密码学理论篇之序列密码体制</h1><h2 id="Vernam（弗纳姆）密码技术"><a href="#Vernam（弗纳姆）密码技术" class="headerlink" title="Vernam（弗纳姆）密码技术"></a>Vernam（弗纳姆）密码技术</h2><p>设明文m=m<sub>1</sub> , m<sub>2</sub> , ….. , 密钥k=k<sub>1</sub> k<sub>2</sub> k<sub>3</sub> …,其中m<sub>i</sub> k<sub> i</sub> ∈ GF(2) , i&gt;=1,则密文 c=c<sub>1</sub> c<sub>2</sub> ….,其中c<sub>i</sub> = m<sub>i</sub> ⊕  </p><p>k<sub>i</sub> .这里⊕为模二加法。</p><p>序列密码起源于20世纪20年代的Vernam密码体制，当Vernam密码体制中的密钥序列是随机的“0,1”序列时，就成为了所谓的“一次一密” 密码体制。香农已经证明“一次一密”密码体制在理论上是不可破译的。但由于随机密钥序列的产生、存储以及分配存在一定的困难，因此Vernam密码体制在当时并没有得到广泛的应用。</p><p>在Vernam密码体制中，用来做密钥的随机序列比较长，发送方和接收方都需要有这个随机序列。这个随机序列这么长，怎么产生、怎么分发、怎么存储？不是容易事儿。</p><p>在序列密码体制中，加密和解密密钥都是伪随机序列，而当前伪随机序列的产生比较容易且有比较成熟的数学理论工具。目前序列密码是世界各国的军事和外交等领域中使用的主要密码体制之一。</p><p>在序列密码中，用伪随机序列做密钥。所需的伪随机序列虽然比较长，但可以通过一个比较短的种子密钥产生。发送方和接收方只需要共同拥有这个种子密钥，再加解密时用种子密钥来产生所需的伪随机序列。</p><h2 id="密码学中的随机数"><a href="#密码学中的随机数" class="headerlink" title="密码学中的随机数"></a>密码学中的随机数</h2><h3 id="随机数及其性质"><a href="#随机数及其性质" class="headerlink" title="随机数及其性质"></a>随机数及其性质</h3><p>序列密码的保密性完全取决于密钥的随机性。如果密钥是真正的随机数，则这种密码体制在理论上是不可破译的。但这种方式所需的密钥量大得惊人，在实际中是不可行的。目前一般采用伪随机序列来代替随机作为密钥序列，也就是序列存在着一定的循环周期性。如果周期足够长，就会有比较好的保密性。现在周期小于10<sup>10</sup>的序列很少采用。</p><p>（分组密码算法本身比较复杂，也还算有点“秘密”（如果可可以隐瞒算法的话）。序列密码算法完全没有“秘密”可言，他就是将明文流和密钥流按位做异或运算，因而其安全性更是完全依赖于密钥。）</p><h4 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h4><p>通常所讲的随机数是指没有规律的数据。</p><h4 id="随机数的性质"><a href="#随机数的性质" class="headerlink" title="随机数的性质"></a>随机数的性质</h4><p>（1）随机性。在密码学的应用中要求随机数具有无规律性，无规律性主要体现在以下两个方面：</p><p>1.具有均匀分布、总体良好的随机统计特征。</p><p>2.不能重复产生，即在完全相同的条件下，将得到两个不相关的随机序列。</p><p>（2）不可预测性。即使给出产生序列的硬件和所有以前产生的序列的全部知识，也不能预测下一个随机位是什么，因而随机序列是非周期的</p><p>（喻：关于不能重复产生这事儿。比如说掷硬币确定10bit的比特串（正就是1，反就是0）。</p><h3 id="随机数的生成方法"><a href="#随机数的生成方法" class="headerlink" title="随机数的生成方法"></a>随机数的生成方法</h3><p>（1）物理方法利用自然界的一些真的随机物理量来生成随机数。比如，放射性衰变、电子设备的噪声、宇宙射线的触发时间。</p><p>（2）利用计算机来产生随机数，即数学方法。这类方法由一个初始状态（称为“种子”）开始，通过一个确定的算法来生成随机数。一旦给定算法和种子，输出的序列就是确定的，因而产生的序列具有周期性、规律性和重复性，不是真正的随机数，而是伪随机数（PRN），产生伪随机数的算法或硬件一般称之为伪随机生成器（PRNG）。</p><p>PRNG实现简单、速度快、经济，而且在目前的许多应用中并不一定必须使用真正的随机数，只要产生的伪随机数的随机性能满足应用需求就可以。</p><h3 id="伪随机的评价标准"><a href="#伪随机的评价标准" class="headerlink" title="伪随机的评价标准"></a>伪随机的评价标准</h3><p>（1）看起来随机的，表明他可以通过所有随机性统计检验。</p><p>（2）它是不可预测的。即使给出产生序列的算法或硬件，以及所有以前产生的比特流的全部知识，也不可能通过计算来预测下一个随机比特应是什么。</p><h3 id="序列密码的基本原理"><a href="#序列密码的基本原理" class="headerlink" title="序列密码的基本原理"></a>序列密码的基本原理</h3><h4 id="序列密码体制的概念"><a href="#序列密码体制的概念" class="headerlink" title="序列密码体制的概念"></a>序列密码体制的概念</h4><p>在序列密码中，明文表示成一个序列，称为明文流，加密时，先由种子密钥（或称为主密钥）通过密钥流生成器 产生一个密钥流序列，然后依次把明文流和密钥流中的对应项做二元加法运算（异或运算），产生相应的密文流。</p><p>解密过程是将同样的密钥流与密文流中的对应项做二元加法运算，恢复出原来的明文流。</p><p><img src="https://img-blog.csdnimg.cn/7546123a41b6434881d51a880baca84a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeHk0MDQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">明文字为01101010</span><br><span class="line">密钥字为10110111</span><br><span class="line">加密</span><br><span class="line">01101010⊕10110111=11011101</span><br><span class="line">解密</span><br><span class="line">11011101⊕10110111=01101010</span><br></pre></td></tr></table></figure><p>如果密钥流是无周期的（真正随机的）无限长随机序列，那么此时的序列密码即为“一次一密”的密码体制。</p><h4 id="序列密码体制的分类"><a href="#序列密码体制的分类" class="headerlink" title="序列密码体制的分类"></a>序列密码体制的分类</h4><p>根据状态函数是否独立于明文或密文，可以将序列密码分为同步序列密码和自同步序列密码。</p><h5 id="同步序列密码的特点："><a href="#同步序列密码的特点：" class="headerlink" title="同步序列密码的特点："></a>同步序列密码的特点：</h5><p>（1）同步要求：在一个同步序列中，发送方和接收方必须是同步的，即用同样的密钥且该密钥操作在同样的位置（状态），才能保证正确地解密。</p><p>（2）无错误传播：在传输期间，一个密文字（或位）被改变（不是删除和插入）只能影响该密文字（或位）的恢复，不会对后续密文字（或位）产生影响。</p><p>（3）主动攻击破坏同步：按照同步要求，一个主动攻击对密文进行插入、删除或重放操作都会立即破坏其同步。</p><p>同步序列密码需要人为地把密文和密钥给它们整同步（密文第几比特，密钥第几比特）才能正确解密。</p><h5 id="自同步序列密码的特点"><a href="#自同步序列密码的特点" class="headerlink" title="自同步序列密码的特点"></a>自同步序列密码的特点</h5><p>（1）自同步：解密只取决于先前固定数量的密文字。自同步序列密码在同步丢失后能够自动重新建立同步，并正确地解密，只有固定数量的明文字不能解密。</p><p>（2）有限的错误传播：若一个密文字（或位）在传输过程中被修改（插入或删除），则解密时最多只影响到后续t个密文字的解密，即只发生有限的错误传播。</p><p>（3）难检测主动攻击：自同步使得主动攻击者发起的对密文字的插入、删除。重放等攻击只会产生非常有限的影响，正确的解密能很快自动重建。</p><p>自同步序列密码：即使密文和密钥暂时失去了同步，过一会它们自己还能给整同步（无需人为干预）。</p><p>序列密码许多研究成果并没有完全公开，这或许是因为序列密码目前主要应用于军事、外交等机密部门的缘故。序列密码的安全强度取决于密钥流生成器的设计，产生密钥流最重要的部件是线性反馈移位寄存器（LFSR），这是因为LFSR非常适合硬件实现、能产生较大周期和统计特性良好的序列，以及能够用代数方法对产生的序列进行很好的分析。</p><h4 id="线性反馈移位寄存器及密钥序列的伪随机性"><a href="#线性反馈移位寄存器及密钥序列的伪随机性" class="headerlink" title="线性反馈移位寄存器及密钥序列的伪随机性"></a>线性反馈移位寄存器及密钥序列的伪随机性</h4><h5 id="线性反馈移位寄存器"><a href="#线性反馈移位寄存器" class="headerlink" title="线性反馈移位寄存器"></a>线性反馈移位寄存器</h5><p>移位寄存器是流密码产生密钥流的一个主要组成部分。GF(2)上一个n级反馈移位寄存器由n个二元存储器与一个反馈函数f(a<sub>1</sub> , a<sub>2</sub> , …. , a<sub>n</sub>)组成</p><p><img src="https://img-blog.csdnimg.cn/20200727180102465.png" alt="img"></p><p>(时钟滴答一声，a<del>1</del> ， a<del>2</del> ，…. , a<del>n</del> 都右移一位，a<del>1</del> 被挤出去了，做为这一步的输出比特，左边a<del>n</del> 还腾出来一个位置，被f(a<del>1</del>,a<del>2</del>,..,a<del>n</del>)补位，原来的a<del>2</del>就是新的a<del>1</del>  </p><p>每一个寄存器称为移位寄存器的一级，在任一时刻，这些级的内容构成改反馈的内容构成该反馈移位寄存器的状态，每一个状态对应于GF（2）上的一个n维向量，共有2^n^种可能的状态。每一时刻的状态可用n长序列（a<del>1</del>，a<del>2</del>,….,a<del>n</del>）来表示，其中a<del>i</del>是第i级存储器的内容。<br>$$<br>因为a1 ，a2 ，……，an∈ {0,1}，他们都有两种选择<br>，所以（a1，a2,……，an)2^n种状态<br>$$<br>初始状态由用户确定，当第i个移位是钟脉冲到来时，每一级存储器a<del>i</del>都将其内容向下一级a<del>i-1</del>传递，并计算f（a<del>1</del>，a<del>2</del>,a<del>3</del>,….,a<del>n</del>)作为下一时刻的a<del>n</del>。反馈函数f(a<del>1</del>,a<del>2</del>,a<del>3</del>,….,a<del>n</del>)是n元布尔函数，函数中的运算有逻辑与、逻辑或、逻辑补等，最后函数值也为0或1.</p><p>上一个栗子：</p><p><img src="https://img-blog.csdnimg.cn/867fe70a80b1430bbe1514e78f830412.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeHk0MDQ=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p><p>反馈函数f(a<del>1</del>,a<del>2</del>,a<del>3</del>,a<del>4</del>,a<del>5</del>)=a<del>1</del>⊕a<del>4</del></p><p>相当于是f(a<del>1</del>,a<del>2</del>,a<del>3</del>,a<del>4</del>,a<del>5</del>)=c<del>5</del>a<del>1</del>⊕c<del>4</del>a<del>2</del>⊕c<del>3</del>a<del>3</del>⊕c<del>2</del>a<del>4</del>⊕c<del>1</del>a<del>5</del></p><p>其中c<del>5</del>=c<del>2</del>=1，c<del>4</del>=c<del>3</del>=c<del>1</del>=0</p><p>状态（a<del>5</del>，a<del>4</del>，a<del>3</del>，a<del>2</del>，a<del>1</del>）    输出a<del>1</del></p><table><thead><tr><th>a<del>5</del></th><th>a<del>4</del></th><th>a<del>3</del></th><th>a~2</th><th>a<del>1</del></th><th></th><th>a<del>1</del></th></tr></thead><tbody><tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td></td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td></td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td></td><td>0</td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;密码学理论篇之序列密码体制&quot;&gt;&lt;a href=&quot;#密码学理论篇之序列密码体制&quot; class=&quot;headerlink&quot; title=&quot;密码学理论篇之序列密码体制&quot;&gt;&lt;/a&gt;密码学理论篇之序列密码体制&lt;/h1&gt;&lt;h2 id=&quot;Vernam（弗纳姆）密码技术&quot;&gt;&lt;a h</summary>
       
     
     
