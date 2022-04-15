@@ -6,7 +6,7 @@
   <link href="http://websec.space/atom.xml" rel="self"/>
   
   <link href="http://websec.space/"/>
-  <updated>2022-04-07T16:31:23.842Z</updated>
+  <updated>2022-04-15T14:30:22.019Z</updated>
   <id>http://websec.space/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>挑战，还是挑战</title>
+    <link href="http://websec.space/2022/04/15/%E6%8C%91%E6%88%98%EF%BC%8C%E8%BF%98%E6%98%AF%E6%8C%91%E6%88%98/"/>
+    <id>http://websec.space/2022/04/15/%E6%8C%91%E6%88%98%EF%BC%8C%E8%BF%98%E6%98%AF%E6%8C%91%E6%88%98/</id>
+    <published>2022-04-14T16:00:00.000Z</published>
+    <updated>2022-04-15T14:30:22.019Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="挑战，还是挑战"><a href="#挑战，还是挑战" class="headerlink" title="挑战，还是挑战"></a>挑战，还是挑战</h1><blockquote><p>好久没写，闲聊了，在今晚不知所措之时写点东西。</p></blockquote><p>​        真正去积淀些东西，会让自己觉得疲倦，真想去挑战，却觉得在输出中没有所得。纠结，还是纠结。人遇到些机会，都不会愿意放弃，但我更想去冲些不切实际的东西，如果不去挑战，我现在还不知道在干什么呢。</p><p>​        说到从不会到会，从0到1我是很有勇气去搞得，不管会与不会，真到了有人要推我一把，想把我推出来，我肯定会不顾一切的登场，有的时候输的很惨，有的时候会有些意外之喜。但真有了些成绩之后，我迟疑了，要不要继续出发，CTF每当我进了舒适圈之后，总有一场比赛告诉我，“你怎么什么也不会？”这是一种无奈感，当下再冲的也是一种无奈。CTF，挖洞是经验的积淀，项目就更像是知识的积淀，这东西没头，也没尾。</p><p>​        另外关于团队作战，是特别羡慕那种大家都能齐头并进的队伍的。一支队伍里面一旦有一个人想懈怠，这产生的副作用也是我无法想的，我很想去避免发生这种事情，但到了最后，我甚至说不出一句责备的话来。可能，也可能是一定，我总在队伍走不下去的时候，有一种莫名的责任感，这种感觉让我，总要在一些时候，要站出来。我急啊，这好像是一种莫名的感觉。我不想倒下，甚至这时候队友都会喷你（他其实想放弃了，这时候站出来，无异于加大他的工作量）。</p><p>​        挑战还有一种神奇的感觉，就是会让你头上悬起一把剑，这导致你不想努力，也不想玩，这种状态可能就叫摸鱼（什么也不想干）。</p><p>这种状态是及其难受的，常让人觉得喘不过气来。</p><p>​        挑战的开始总是欲望，挑战的最后总是坚持。</p><p>（夜深了，从办公室回宿舍的路上，明天早上看看，可能就是晚上的胡言乱语）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;挑战，还是挑战&quot;&gt;&lt;a href=&quot;#挑战，还是挑战&quot; class=&quot;headerlink&quot; title=&quot;挑战，还是挑战&quot;&gt;&lt;/a&gt;挑战，还是挑战&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;好久没写，闲聊了，在今晚不知所措之时写点东西。&lt;/p&gt;
+&lt;/blockqu</summary>
+      
+    
+    
+    
+    <category term="闲聊" scheme="http://websec.space/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+    <category term="闲聊" scheme="http://websec.space/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>php-fpm未授权</title>
@@ -474,30 +500,6 @@
     
     
     <category term="闲聊" scheme="http://websec.space/tags/%E9%97%B2%E8%81%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python基础函数的基本使用</title>
-    <link href="http://websec.space/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
-    <id>http://websec.space/2021/12/21/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
-    <published>2021-12-20T16:00:00.000Z</published>
-    <updated>2021-12-20T06:51:27.528Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="函数的基本使用"><a href="#函数的基本使用" class="headerlink" title="函数的基本使用"></a>函数的基本使用</h1><h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><p>函数是一段具有特定功能的、可重用的语句组，用函数名来表示并通过函数名进行完成功能调用。</p><p>函数也可以看作是一段具有名字的子程序，可以在需要的地方调用执行，不需要在每个执行地方重复编写这些语句。每次使用函数可以提供不同的参数作为输入，以实现对不同数据的处理；函数执行后，还可以反馈相应的处理结果。</p><p>Python定义一个函数使用def保留字，语法形式如下：</p><p>def &lt;函数名&gt;(&lt;参数列表&gt;):</p><p>​    &lt;函数体&gt;</p><p>​    return &lt;返回值列表&gt;</p><p>程序调用一个函数需要执行以下四个步骤：</p><p>（1）调用程序在调用处暂停执行；</p><p>（2）在调用时将实参复制给函数的形参；</p><p>（3）执行函数体语句；</p><p>（4）函数调用结束给出返回值，程序回到调用前的暂停处继续执行。</p><h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>匿名函数，又称lambda函数。</p><p>匿名函数并非没有名字，而是将函数名作为函数结果返回</p><p>&lt;函数名&gt; = lambda &lt;参数列表&gt;: &lt;表达式&gt;</p><p>lambda函数与正常函数一样，等价于下面形式：</p><p>def &lt;函数名&gt;(&lt;参数列表&gt;):</p><p>​    return &lt;表达式&gt;</p><p>简单说，lambda函数用于定义简单的、能够在一行内表示的函数，返回一个函数类型</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;f = <span class="keyword">lambda</span> x, y : x + y</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">type</span>(f)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">function</span>&#x27;&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt;<span class="title">f</span>(<span class="params"><span class="number">10</span>, <span class="number">12</span></span>)</span></span><br><span class="line"><span class="class">22</span></span><br></pre></td></tr></table></figure><h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><p>可选参数和可变数量参数</p><p>在定义函数时，有些参数可以存在默认值</p><p>由于函数调用时需要按顺序输入参数，可选参数必须定义在 非可选参数的后面。即dup函数中带默认值的可选参数times必须定义在str参数后面。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="function"><span class="keyword">def</span> <span class="title">dup</span>(<span class="params"><span class="built_in">str</span>, times = <span class="number">2</span></span>):</span></span><br><span class="line">       <span class="built_in">print</span>(<span class="built_in">str</span>*times)</span><br><span class="line">&gt;&gt;&gt;dup(<span class="string">&quot;knock~&quot;</span>)</span><br><span class="line">knock~knock~</span><br><span class="line">&gt;&gt;&gt;dup(<span class="string">&quot;knock~&quot;</span>,<span class="number">4</span>)</span><br><span class="line">knock~knock~knock~knock~</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>在函数定义时，可以设计可变数量参数，通过参数前增加星号（*）实现</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="function"><span class="keyword">def</span> <span class="title">vfunc</span>(<span class="params">a, *b</span>):</span></span><br><span class="line">       <span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line">       <span class="keyword">for</span> n <span class="keyword">in</span> b:</span><br><span class="line">           a += n</span><br><span class="line">       <span class="keyword">return</span> a</span><br><span class="line">&gt;&gt;&gt;vfunc(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;</span></span><br><span class="line"><span class="class">15</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></figure><h4 id="参数的位置和名称传递"><a href="#参数的位置和名称传递" class="headerlink" title="参数的位置和名称传递"></a>参数的位置和名称传递</h4><p>参数较多时，采用按照位置顺序的方式传递给参数，可读性较差</p><p>假设func()函数有6个参数，定义如下：</p><p>func(x1, y1, z1, x2, y2, z2)</p><p>​    return</p><p>调用  </p><p>Result = func(1, 2, 3, 4, 5, 6)</p><p>如果仅看实际调用而不看函数定义，很难理解这些输入参数的含义</p><p>Python提供了按照形参名称输入实参的方式，调用如下：</p><p>result = func(x2=4, y2=5, z2=6, x1=1, y1=2, z1=3)</p><p>由于调用函数时指定了参数名称，所以参数之间的顺序可以任意调整</p><h3 id="变量的返回值"><a href="#变量的返回值" class="headerlink" title="变量的返回值"></a>变量的返回值</h3><p>return语句用来退出函数并将程序返回到函数被调用的位置继续执行。</p><p>return语句同时可以将0个、1个或多个函数运算完的结果返回给函数被调用处的变量。</p><p>函数也可以用return返回多个值，多个值以元组类型保存</p><h4 id="函数对变量的作用"><a href="#函数对变量的作用" class="headerlink" title="函数对变量的作用"></a>函数对变量的作用</h4><p>一个程序中的变量包括两类：全局变量和局部变量。</p><p>全局变量指在函数之外定义的变量，一般没有缩进，在程序执行全过程有效。</p><p>局部变量指在函数内部使用的变量，仅在函数内部有效，当函数退出时变量将不存在。</p><p>变量的返回值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;n = <span class="number">1</span>    <span class="comment">#n是全局变量</span></span><br><span class="line">&gt;&gt;&gt;<span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">a, b</span>):</span></span><br><span class="line">       c = a * b     <span class="comment">#c是局部变量，a和b作为函数参数也是局部变量</span></span><br><span class="line">       <span class="keyword">return</span> c</span><br><span class="line">&gt;&gt;&gt;s = func(<span class="string">&quot;knock~&quot;</span>, <span class="number">2</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">print</span>(c)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;pyshell#6&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br><span class="line">NameError: name <span class="string">&#x27;c&#x27;</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>当函数执行完退出后，其内部变量将被释放。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;n = <span class="number">1</span>    <span class="comment">#n是全局变量</span></span><br><span class="line">&gt;&gt;&gt;<span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">a, b</span>):</span></span><br><span class="line">       n = b     <span class="comment">#这个n是在函数内存中新生成的局部变量，不是全局变量 </span></span><br><span class="line">       <span class="keyword">return</span> a*b</span><br><span class="line">&gt;&gt;&gt;s = func(<span class="string">&quot;knock~&quot;</span>, <span class="number">2</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">print</span>(s, n)  <span class="comment">#测试一下n值是否改变</span></span><br><span class="line">knock~knock~ <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;函数的基本使用&quot;&gt;&lt;a href=&quot;#函数的基本使用&quot; class=&quot;headerlink&quot; title=&quot;函数的基本使用&quot;&gt;&lt;/a&gt;函数的基本使用&lt;/h1&gt;&lt;h3 id=&quot;函数的定义&quot;&gt;&lt;a href=&quot;#函数的定义&quot; class=&quot;headerlink&quot; ti</summary>
-      
-    
-    
-    
-    <category term="python" scheme="http://websec.space/categories/python/"/>
-    
-    
-    <category term="python" scheme="http://websec.space/tags/python/"/>
     
   </entry>
   
