@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数据库理论知识 | Xinyuan's blog</title><meta name="keywords" content="数据库"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据库理论知识 要数据库期末考试了，一个学期没听过课，看了看重点怎么跟平时我们搞sql注入时所关注的sql语句不同，全是理论知识，所以来水一篇博客吧。  第一章 绪论数据库的四个基本概念（1） 数据（2） 数据库：长期储存在计算机内、有组织的、可共享的大量数据的集合（3） 数据库管理系统：基础软件，是一个大型复杂的软件系统。（4） 数据库系统：包括数据库、数据库管理系统、应用程序、数据库管理员 数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库理论知识">
+<meta property="og:url" content="http://websec.space/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="数据库理论知识 要数据库期末考试了，一个学期没听过课，看了看重点怎么跟平时我们搞sql注入时所关注的sql语句不同，全是理论知识，所以来水一篇博客吧。  第一章 绪论数据库的四个基本概念（1） 数据（2） 数据库：长期储存在计算机内、有组织的、可共享的大量数据的集合（3） 数据库管理系统：基础软件，是一个大型复杂的软件系统。（4） 数据库系统：包括数据库、数据库管理系统、应用程序、数据库管理员 数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png">
+<meta property="article:published_time" content="2022-06-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-08T14:41:34.051Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库理论知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-08 22:41:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库理论知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-07T16:00:00.000Z" title="发表于 2022-06-08 00:00:00">2022-06-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-08T14:41:34.051Z" title="更新于 2022-06-08 22:41:34">2022-06-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库理论知识"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据库理论知识"><a href="#数据库理论知识" class="headerlink" title="数据库理论知识"></a>数据库理论知识</h1><blockquote>
+<p>要数据库期末考试了，一个学期没听过课，看了看重点怎么跟平时我们搞sql注入时所关注的sql语句不同，全是理论知识，所以来水一篇博客吧。</p>
+</blockquote>
+<h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><h3 id="数据库的四个基本概念"><a href="#数据库的四个基本概念" class="headerlink" title="数据库的四个基本概念"></a>数据库的四个基本概念</h3><p>（1） 数据<br>（2） 数据库：长期储存在计算机内、有组织的、可共享的大量数据的集合<br>（3） 数据库管理系统：基础软件，是一个大型复杂的软件系统。<br>（4） 数据库系统：包括数据库、数据库管理系统、应用程序、数据库管理员</p>
+<h3 id="数据管理的三个阶段"><a href="#数据管理的三个阶段" class="headerlink" title="数据管理的三个阶段"></a>数据管理的三个阶段</h3><p><img src="https://img-blog.csdnimg.cn/d94eb72616a248ea8b247c363a4ff31c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="数据库系统的特点"><a href="#数据库系统的特点" class="headerlink" title="数据库系统的特点"></a>数据库系统的特点</h3><p>（1） 数据结构化<br>（2） 数据的共享性高，冗余度低，易扩充<br>（3） 数据的独立性高<br>（4） 数据由数据库管理系统统一管理和控制</p>
+<p>数据模型三要素：数据结构、数据操作、数据的完整性约束条件</p>
+<p>两类数据模型：概念模型，逻辑模型和物理模型</p>
+<h3 id="常用的数据模型"><a href="#常用的数据模型" class="headerlink" title="常用的数据模型"></a>常用的数据模型</h3><p><img src="https://img-blog.csdnimg.cn/2bc2c8de0fca4c84b8f6de24df350641.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">（1） 层次模型：树形结构。网状模型：网状结构。这两类系统执行效率高。<br>（2) 关系模型：一个关系对应一张表，不允表中还有表。<br>优点：建立在严格的数学概念的基础上；概念单一；关系模型的存取路径对用户透明。<br>缺点：查询效率不如格式化数据模型；必须对用户的查询、优化，<br>增加了开发数据库管理系统的难度。</p>
+<h3 id="三级模式-三级视图"><a href="#三级模式-三级视图" class="headerlink" title="三级模式(三级视图)"></a>三级模式(三级视图)</h3><p><img src="https://img-blog.csdnimg.cn/47276bd91bac4c35bcc82de5b27a57ad.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>External Schema —- (External) View </p>
+<p>某一用户能够看到与处理的数据的结构描述</p>
+<p>(Conceptual) Schema —- Conceptual View</p>
+<p>从全局角度理解/管理的数据的结构描述含相应的关联约束体现在数据之间的内在本质联系</p>
+<p>Internal Schema —- Internal View</p>
+<p>存储在介质上的数据的结构描述，含存储路径、存储方式、索引方式</p>
+<p>（1 ）一个模式可以有多个外模式，一个数据库只能有一个内模式。</p>
+<p>（2）外模式/模式映像，映像定义通常包含在各外􂁑式􂲴描􄘠中，保证了数据的逻辑独立性。<br>（3） 模式/内模式映像，映像定义通常包含在模式描述中，保证了数据物理独立性。</p>
+<h3 id="两层映像"><a href="#两层映像" class="headerlink" title="两层映像"></a>两层映像</h3><p>E-C Mapping : External Schema-Conceptual Schema Mapping</p>
+<p>—-将外模式映射为概念模式，从而支持实现数据概念视图向外部视图的转换—便于用户观察和使用</p>
+<p>C-1 Mapping ;Conceptual Schema-Internal Schema Mapping</p>
+<p>—将概念模式映射为内模式，从而支持实现数据概念视图向内部视图的转换—-便于计算机进行存储和处理</p>
+<h3 id="两个独立性"><a href="#两个独立性" class="headerlink" title="两个独立性"></a>两个独立性</h3><h4 id="逻辑数据独立性"><a href="#逻辑数据独立性" class="headerlink" title="逻辑数据独立性"></a>逻辑数据独立性</h4><p>当概念模式变化时，可以不改变外部模式(只需改变E-C Mapping)，从而无需改变应用程序</p>
+<h4 id="物理数据独立性"><a href="#物理数据独立性" class="headerlink" title="物理数据独立性"></a>物理数据独立性</h4><p>当内部模式变化时，可以不改变概念模式(只需改变C-1 Mapping)，从而不改变外部模式</p>
+<h2 id="第二章-关系数据库"><a href="#第二章-关系数据库" class="headerlink" title="第二章 关系数据库"></a>第二章 关系数据库</h2><h3 id="码："><a href="#码：" class="headerlink" title="码："></a>码：</h3><p>（1） 候选码：能唯一标识一个元组的一组属性<br>（2） 全码：关系模式的所有属性组时这个关系模式的候选码，称为全码。<br>（3） 主码：选定一个候选码作为主码<br>（4） 主属性：候选码中的属性<br>（5） 非主属性：不包含在任何候选码中的属性</p>
+<h3 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h3><p>（1） 实体完整性：主属性不能取空<br>（2） 参照完整性：外码只能取空值或参照关系的主码值（将别的关系的主码作为本关系的属性，称为外码）（当外码作为本关系的主属性时，外码不能取空）<br>（3） 用户定义的完整性：例如某个属性必须取唯一值、某个非主属性不能取空值。</p>
+<h3 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h3><h4 id="传统集合运算"><a href="#传统集合运算" class="headerlink" title="传统集合运算"></a>传统集合运算</h4><p><img src="https://img-blog.csdnimg.cn/11045a1dd94d49e393b1f1d95478cd9d.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="专门的关系运算"><a href="#专门的关系运算" class="headerlink" title="专门的关系运算"></a>专门的关系运算</h4><p><img src="https://img-blog.csdnimg.cn/9cbfee5f96d94b31892ba4f6a591c5f2.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h5 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h5><p><img src="https://img-blog.csdnimg.cn/22b0bfc63fa840838360539162b383ca.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/e0b13a0f86644b9aaf197759a1c407f4.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><img src="https://img-blog.csdnimg.cn/15de45222d514d4799598092ac2d4d17.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/a36cfe86eb79465f8b0ba70e995a6759.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/4437115136414ff2865fed99b15c24e0.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/34b210f3cedc4365abd16c3c31d7daae.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h5 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h5><p><img src="https://img-blog.csdnimg.cn/f119c5ab7ed446369334597474fd92aa.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/0da4b01839694c58977d0145e4e0b504.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><p><img src="https://img-blog.csdnimg.cn/0404d53e24434f13870736ad63d699e4.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/ba717ec84b4b4bf8b7e3848b1408404f.png" alt="img" style="zoom: 80%;" />⼀般连接结果</p>
+<img src="https://img-blog.csdnimg.cn/d56670fc399e4ee9a9d714ef9e992d4f.png" alt="img" style="zoom:67%;" />
+
+<p><img src="https://img-blog.csdnimg.cn/6cd2d81d31334b8c85103acb5c7948d4.png" alt="img" style="zoom:80%;" /><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>（不能删掉相同的属性列R. B和S . B 都保留,）</p>
+<img src="https://img-blog.csdnimg.cn/682b767295c84e0da855e415e9785bfe.png" alt="img" style="zoom:80%;" />
+
+<p>⾃然连接把两个关系的同名属性中值相同的元组留下去掉重复属性和重复⾏。</p>
+<p>做完⾃然连接后，被舍弃的元组称为悬浮元组如果把舍弃的元组也保留下来，就叫做外连接</p>
+<h6 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h6><p><img src="https://img-blog.csdnimg.cn/0066ae7f259b4c61b3bc1f3ec9449065.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h6 id="左外连接-右外连接"><a href="#左外连接-右外连接" class="headerlink" title="左外连接                                                                                                                   右外连接"></a>左外连接                                                                                                                   右外连接</h6><p><img src="https://img-blog.csdnimg.cn/dae7358b883640e7ada94fb10e149550.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h5 id="除"><a href="#除" class="headerlink" title="除"></a>除</h5><p><img src="https://img-blog.csdnimg.cn/d92d575761684753a55f7ad03cddbc59.png" alt="img" style="zoom: 67%;" /><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><img src="https://img-blog.csdnimg.cn/c990bc1964534e27afebc0d775bba1fe.png" alt="img" style="zoom:80%;" /><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>有相同的属性列B、C.a 的象集包含了关系中B C 的所有投影</p>
+<p><img src="https://img-blog.csdnimg.cn/ee7bad9af18d47c2ba59680a0b956b77.png" alt="img" style="zoom:67%;" /><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="第六章关系数据理论"><a href="#第六章关系数据理论" class="headerlink" title="第六章关系数据理论"></a>第六章关系数据理论</h2><h3 id="函数依赖的相关概念"><a href="#函数依赖的相关概念" class="headerlink" title="函数依赖的相关概念"></a>函数依赖的相关概念</h3><p><img src="https://img-blog.csdnimg.cn/0440c51269e8412a9e607ad5d6ac3c68.png" alt="img"></p>
+<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><p><img src="https://img-blog.csdnimg.cn/58c1e7dec68f46b4ace1727b8f6e8c31.png" alt="img"></p>
+<p>F逻辑蕴涵X→ Y: 若x属性集中有2个元组的值相等, 则2 个元组在Y属性集上的值也相等。</p>
+<img src="https://img-blog.csdnimg.cn/10b8c7d65a154c16aede40900509f57a.png" alt="img" style="zoom: 50%;" />
+
+<img src="https://img-blog.csdnimg.cn/3aff2a089e264dceb84609b51ac31749.png" alt="img" style="zoom: 50%;" />
+
+<h3 id="求属性集关于函数依赖集的闭包"><a href="#求属性集关于函数依赖集的闭包" class="headerlink" title="求属性集关于函数依赖集的闭包"></a>求属性集关于函数依赖集的闭包</h3><img src="https://img-blog.csdnimg.cn/893ad862f3394d8c935753f276bc188f.png" alt="img" style="zoom: 50%;" />
+
+<img src="https://img-blog.csdnimg.cn/b7e3d0d4a12b481cadc24fdf46823b34.png" alt="img" style="zoom: 50%;" />
+
+
+
+
+
+<h3 id="最小依赖集Fm"><a href="#最小依赖集Fm" class="headerlink" title="最小依赖集Fm"></a>最小依赖集Fm</h3><img src="https://img-blog.csdnimg.cn/4ffedf19d50844219ae7819a57874f7b.png" alt="img" style="zoom:67%;" />
+
+<p><img src="https://img-blog.csdnimg.cn/e62febe7874b44f6b58b5e3238d3c342.png" alt="img"></p>
+<h2 id="第七章-数据库设计"><a href="#第七章-数据库设计" class="headerlink" title="第七章 数据库设计"></a>第七章 数据库设计</h2><img src="https://img-blog.csdnimg.cn/3663101854b14ad9861c121e85e49a09.png" alt="img" style="zoom: 15%;" />
+
+<h3 id="概念结构设计阶段"><a href="#概念结构设计阶段" class="headerlink" title="概念结构设计阶段"></a>概念结构设计阶段</h3><p>概念结构设计是整个数据库设计的关键，它通过对用户需求进行综合、归纳与抽象，形成一个独立于具体数据库管理系统的概念模型。</p>
+<h3 id="逻辑结构设计"><a href="#逻辑结构设计" class="headerlink" title="逻辑结构设计"></a>逻辑结构设计</h3><p>逻辑结构设计是将概念结构转换为某个数据库管理系统所支持的数据模型，并对其进行优化。</p>
+<h3 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h3><p>E-R图提供了表示实体型、属性和联系的方法。</p>
+<p>（1）实体型用矩形表示。</p>
+<p>（2）属性用椭圆形表示。</p>
+<p>（3）联系用菱形表示，菱形框内写明联系名，并用无向边分别与有关实体型连接起来，同时在无向边旁标上联系的类型（1:1、1:n或m:n）。</p>
+<h4 id="1对1"><a href="#1对1" class="headerlink" title="1对1"></a>1对1</h4><img src="https://img-blog.csdnimg.cn/img_convert/b50736dcbc183c5d77e609dbc5d01210.png" alt="img" style="zoom:50%;" />
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>通过定义，我们可以初步的到一组关系模式：</p>
+<blockquote>
+<p>教师（性别，职工号，手机号，年龄，姓名）<br>班级（班级名称，班级号）<br>负责（职工号，班级号）</p>
+</blockquote>
+<p>这就是一组关系模式，有人会说，<code>负责</code>这组关系模式好像多余呀。是的，下面我们就着手将其进行合并。</p>
+<p>这里可以将<code>教师</code>和<code>负责</code>两个关系合并到一起，也可以选择将<code>班级</code>和<code>负责</code>合并到一起。</p>
+<p>*<strong>1.合并<code>教师</code>和<code>负责</code>*</strong></p>
+<blockquote>
+<p>教师（性别，职工号，手机号，年龄，姓名，班级号）<br>班级（班级名称，班级号）</p>
+</blockquote>
+<p>合并就是将关系<code>负责</code>的属性添加到<code>教师</code>的属性中去，然后合并重复的属性。</p>
+<h4 id="1对n"><a href="#1对n" class="headerlink" title="1对n"></a>1对n</h4><img src="https://img-blog.csdnimg.cn/img_convert/eaa2e9f6a2460aa5ae3fd7650a74635b.png" alt="img" style="zoom:50%;" />
+
+
+
+
+
+<p>同样的，我们有可以先得到一组独立地关系模式：</p>
+<blockquote>
+<p>学生（学号，姓名，性别）<br>班级（班级名称，班级号）<br>包含（学号，班级号，人数）</p>
+</blockquote>
+<p>然后将<code>联系</code>的关系进行合并。在<code>1对n</code>的关系中，需要将联系的关系添加到<code>n的一方</code>的关系模式中。</p>
+<blockquote>
+<p>学生（学号，姓名，性别，班级号）<br>班级（班级名称，班级号）</p>
+</blockquote>
+<h4 id="m对n转换关系"><a href="#m对n转换关系" class="headerlink" title="m对n转换关系"></a>m对n转换关系</h4><p>最后看一下多对多的关系是如何转换的。首先还是先给出ER图：</p>
+<img src="https://image-static.segmentfault.com/192/068/1920684943-5c09eaed33df7_articlex" alt="clipboard.png" style="zoom:50%;" />
+
+<p>学生和课程的关系是<code>m:n</code>的。然后得到初步的关系模型：</p>
+<blockquote>
+<p>学生（学号，姓名，性别）<br>课程（课程号，课程名）<br>选修（学号，课程号，成绩）</p>
+</blockquote>
+<p>按照上面的惯例，下面我们应该合并关系模型了。但是在多对多的关系下，三种关系模式是不能进行合并的。而两个实体联系的关系模式正式我们常说的中间表的结构。</p>
+<p>关系模式（Relation Schema）是对关系的描述,它可以形式化地表示为： <code>R（U，D，dom，F）</code>。</p>
+<p>其中<code>R</code>为<code>关系名</code>，<code>U</code>为组成该关系的<code>属性名集合</code>，<code>D</code>为属性组U中属性所来自的<code>域</code>，<code>dom</code>为属性向域的<code>映象集合</code>，<code>F</code>为属性间数据的<code>依赖关系集合</code>。</p>
+<p>通常简记为：<code>R(U)</code>或<code>R(A1，A2，…,An)</code>其中R为关系名，U为属性名集合，A1，A2，…,An为各属性名。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/">http://websec.space/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/08/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B9%8B%E5%8E%9F%E7%94%9F/"><img class="next-cover" src="https://img-blog.csdnimg.cn/5f4b94b2998044bcab04ba7d355c041e.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">java反序列化之原生</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">数据库理论知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据库的四个基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据管理的三个阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据库系统的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text">常用的数据模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F-%E4%B8%89%E7%BA%A7%E8%A7%86%E5%9B%BE"><span class="toc-number">1.1.5.</span> <span class="toc-text">三级模式(三级视图)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E5%B1%82%E6%98%A0%E5%83%8F"><span class="toc-number">1.1.6.</span> <span class="toc-text">两层映像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">1.1.7.</span> <span class="toc-text">两个独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">逻辑数据独立性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">物理数据独立性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.2.</span> <span class="toc-text">第二章 关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%81%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text">关系的完整性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">关系代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">传统集合运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E9%97%A8%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">专门的关系运算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.3.2.1.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.2.2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%95%E5%BD%B1"><span class="toc-number">1.2.3.2.3.</span> <span class="toc-text">投影</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.2.4.</span> <span class="toc-text">连接</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.2.4.1.</span> <span class="toc-text">外连接</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5-%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.2.4.2.</span> <span class="toc-text">左外连接                                                                                                                   右外连接</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%99%A4"><span class="toc-number">1.2.3.2.5.</span> <span class="toc-text">除</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text">第六章关系数据理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">函数依赖的相关概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%B1%9E%E6%80%A7%E9%9B%86%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E7%9A%84%E9%97%AD%E5%8C%85"><span class="toc-number">1.3.3.</span> <span class="toc-text">求属性集关于函数依赖集的闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BE%9D%E8%B5%96%E9%9B%86Fm"><span class="toc-number">1.3.4.</span> <span class="toc-text">最小依赖集Fm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text">第七章 数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">概念结构设计阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">逻辑结构设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-R%E5%9B%BE"><span class="toc-number">1.4.3.</span> <span class="toc-text">E-R图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%AF%B91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1对1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%AF%B9n"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">1对n</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m%E5%AF%B9n%E8%BD%AC%E6%8D%A2%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">m对n转换关系</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" title="数据库理论知识"><img src="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库理论知识"/></a><div class="content"><a class="title" href="/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" title="数据库理论知识">数据库理论知识</a><time datetime="2022-06-07T16:00:00.000Z" title="发表于 2022-06-08 00:00:00">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/08/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B9%8B%E5%8E%9F%E7%94%9F/" title="java反序列化之原生"><img src="https://img-blog.csdnimg.cn/5f4b94b2998044bcab04ba7d355c041e.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java反序列化之原生"/></a><div class="content"><a class="title" href="/2022/05/08/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B9%8B%E5%8E%9F%E7%94%9F/" title="java反序列化之原生">java反序列化之原生</a><time datetime="2022-05-07T16:00:00.000Z" title="发表于 2022-05-08 00:00:00">2022-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E5%9B%BE%E7%89%87%E9%A9%AC/" title="图片马"><img src="https://img-blog.csdnimg.cn/18f972e64319452186e09ee7c4727252.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片马"/></a><div class="content"><a class="title" href="/2022/05/07/%E5%9B%BE%E7%89%87%E9%A9%AC/" title="图片马">图片马</a><time datetime="2022-05-06T16:00:00.000Z" title="发表于 2022-05-07 00:00:00">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/15/%E6%8C%91%E6%88%98%EF%BC%8C%E8%BF%98%E6%98%AF%E6%8C%91%E6%88%98/" title="挑战，还是挑战"><img src="https://img-blog.csdnimg.cn/49a9848a8d1c4bfda6101cada066aa68.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="挑战，还是挑战"/></a><div class="content"><a class="title" href="/2022/04/15/%E6%8C%91%E6%88%98%EF%BC%8C%E8%BF%98%E6%98%AF%E6%8C%91%E6%88%98/" title="挑战，还是挑战">挑战，还是挑战</a><time datetime="2022-04-14T16:00:00.000Z" title="发表于 2022-04-15 00:00:00">2022-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/08/php-fpm%E6%9C%AA%E6%8E%88%E6%9D%83/" title="php-fpm未授权"><img src="https://img-blog.csdnimg.cn/01e025c3e71841d487545d99eed0d1ca.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php-fpm未授权"/></a><div class="content"><a class="title" href="/2022/04/08/php-fpm%E6%9C%AA%E6%8E%88%E6%9D%83/" title="php-fpm未授权">php-fpm未授权</a><time datetime="2022-04-07T16:00:00.000Z" title="发表于 2022-04-08 00:00:00">2022-04-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'ddb5a1c782f557c8b5e004c16299ea5c',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
