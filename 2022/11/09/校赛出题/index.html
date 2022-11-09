@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>举办一场CTF比赛 | Xinyuan's blog</title><meta name="keywords" content="wp"><meta name="author" content="鑫缘,xy_404@163.com"><meta name="copyright" content="鑫缘"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="举办一场CTF比赛 终于从一年以前就想举办的校赛，成功实现并顺利结束了。 校赛结束了，真的比较难忘。 从平台部署到运维，到出题前后要折腾了一周。 说点好玩的，当天晚上被ddos一晚上。就是一晚上都没有给打下来，最大16w的并发量，不知道哪来这么大的仇恨。  在这里放一下出的两个题目的wp Webwhat_is_fuck想考察put上传的，后面再出题过程中，干脆加点phpfuck的内容，让大家感受一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="举办一场CTF比赛">
+<meta property="og:url" content="http://websec.space/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/index.html">
+<meta property="og:site_name" content="Xinyuan&#39;s blog">
+<meta property="og:description" content="举办一场CTF比赛 终于从一年以前就想举办的校赛，成功实现并顺利结束了。 校赛结束了，真的比较难忘。 从平台部署到运维，到出题前后要折腾了一周。 说点好玩的，当天晚上被ddos一晚上。就是一晚上都没有给打下来，最大16w的并发量，不知道哪来这么大的仇恨。  在这里放一下出的两个题目的wp Webwhat_is_fuck想考察put上传的，后面再出题过程中，干脆加点phpfuck的内容，让大家感受一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fb973263055449909f79fba5cdd8b288.jpeg">
+<meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-09T00:49:30.566Z">
+<meta property="article:author" content="鑫缘">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/fb973263055449909f79fba5cdd8b288.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://websec.space/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '举办一场CTF比赛',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-09 08:49:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xinyuan's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/fb973263055449909f79fba5cdd8b288.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xinyuan's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">举办一场CTF比赛</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-08T16:00:00.000Z" title="发表于 2022-11-09 00:00:00">2022-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-09T00:49:30.566Z" title="更新于 2022-11-09 08:49:30">2022-11-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/wp/">wp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="举办一场CTF比赛"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="举办一场CTF比赛"><a href="#举办一场CTF比赛" class="headerlink" title="举办一场CTF比赛"></a>举办一场CTF比赛</h1><p><img src="https://img-blog.csdnimg.cn/c0f41a34efa148b99b5a1d8d3ead87c2.png" alt="image-20221108164711778"></p>
+<p>终于从一年以前就想举办的校赛，成功实现并顺利结束了。</p>
+<p>校赛结束了，真的比较难忘。</p>
+<p>从平台部署到运维，到出题前后要折腾了一周。</p>
+<p>说点好玩的，当天晚上被ddos一晚上。就是一晚上都没有给打下来，最大16w的并发量，不知道哪来这么大的仇恨。</p>
+<p><img src="https://img-blog.csdnimg.cn/0d207af23c5f4d06a51e545cded595ba.png" alt="8"></p>
+<p>在这里放一下出的两个题目的wp</p>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="what-is-fuck"><a href="#what-is-fuck" class="headerlink" title="what_is_fuck"></a>what_is_fuck</h2><p>想考察put上传的，后面再出题过程中，干脆加点phpfuck的内容，让大家感受一下php的灵活性（真不是想恶心人</p>
+<p>访问<a target="_blank" rel="noopener" href="http://www.zip可以获取到程序源码,这里看见一共就两个文件,一共index.php,还有一个fuck.php/">www.zip可以获取到程序源码，这里看见一共就两个文件，一共index.php，还有一个fuck.php</a></p>
+<p>我们先访问一下fuck.php</p>
+<p><img src="https://img-blog.csdnimg.cn/9bbc98feafd1462482e39ea74cab9b51.png" alt="image-20221021151029454"></p>
+<p>发现这一堆东西可以执行，虽然上面有一堆warning</p>
+<p><img src="https://img-blog.csdnimg.cn/f63c6f33e43a44bfab833da9b482b808.png" alt="image-20221021151153009"></p>
+<p>这时候再去看看index.php</p>
+<p><img src="https://img-blog.csdnimg.cn/965ca3adee7245c6aefc04a911d5dbdf.png" alt="image-20221021151228055"></p>
+<p>第一层要去必须要PUT请求</p>
+<p><img src="https://img-blog.csdnimg.cn/ce6e81b6b5fc4ee7b7844498a4ce9404.png" alt="image-20221021151444971"></p>
+<p>出题的具体原理如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;ArrayArray&#x27; =&gt; [].[]</span><br><span class="line">0 =&gt; []^[]</span><br><span class="line">1 =&gt; []^[[]]</span><br><span class="line">2 =&gt; ([]^[[]]) + ([]^[[]])</span><br><span class="line">NULL =&gt; [][[]]</span><br><span class="line">&#x27;p&#x27; =&gt; &#x27;A&#x27;^&#x27;1&#x27; =&gt; &#x27;ArrayArray&#x27;[0] ^ (1).NULL</span><br></pre></td></tr></table></figure>
+
+<p>可以用手拼凑，也可以用网上的脚本</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/splitline/PHPFuck">https://github.com/splitline/PHPFuck</a></p>
+<p>用网上的脚本生成一个语句</p>
+<p><img src="https://img-blog.csdnimg.cn/e7fb14c476fe45baa44142986a8f8b7e.png" alt="image-20221021153035023"></p>
+<p>直接写入cat  /flag</p>
+<p><img src="https://img-blog.csdnimg.cn/7e4cfe3920de4612927cb679e53594b4.png" alt="image-20221021153055044"></p>
+<p>访问/fuck.php</p>
+<p><img src="https://img-blog.csdnimg.cn/6e096c14dd3c4b63811c22db478b20ae.png" alt="image-20221021153221303"></p>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a><strong>Crypto</strong></h1><h2 id="24-o’clock"><a href="#24-o’clock" class="headerlink" title="24 o’clock"></a><strong>24 o’clock</strong></h2><p>本题目主要是考察脚本编写能力吧，毕竟后面这个算法也毫无算法可言。</p>
+<p>主要是返回三个数，然后用这三个数中的两个通过加减乘除运算得到第三个</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/b04d994bac7ad7285f0b1ba2382ae2ff.png" alt="img"></p>
+<p>在此处本来想整个烂活，凌晨24点返回flag来着，但是有的师傅说不行，我也没去深究，my bad，my bad！烂活没整成。</p>
+<p>那就来点正解，前面是个sha256，后面是正常的算法，因为要循环188次，所以需要写脚本</p>
+<p>脚本直接贴在下面了，说一下逻辑，就是判断返回值中是否存在小数，能看到，前面参与运算的，都是随机生成的整数，所以小数一定是结果，并且一定是除法运算得到的小数，所以排个序写个分支，分为含有小数的除法，和只有整数的减法，此题结束</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/7382e80d230b8f003c8c4d4b8c100853.png" alt="img"></p>
+<p>最后只有两解，挺惭愧的，出题没出好哈哈。。。</p>
+<p>萌新记得下载pwntools</p>
+<p>pip install pwntools</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">import hashlib</span><br><span class="line">import string</span><br><span class="line"></span><br><span class="line">num=[0,0,0]</span><br><span class="line">flag=0</span><br><span class="line">def sha_256code(encode,salt):</span><br><span class="line">    str=string.ascii_letters+string.digits</span><br><span class="line">    for i1 in str:</span><br><span class="line">        for i2 in str:</span><br><span class="line">            for i3 in str:</span><br><span class="line">                for i4 in str:</span><br><span class="line">                    plain=i1+i2+i3+i4+salt</span><br><span class="line">                    encode1=hashlib.sha256(plain.encode()).hexdigest()</span><br><span class="line">                    if encode1==encode:</span><br><span class="line">                        return (i1+i2+i3+i4)</span><br><span class="line">sh = remote(&#x27;172.17.21.95&#x27;,9125)</span><br><span class="line">sh.recvuntil(&quot;(&quot;,)</span><br><span class="line">sh.recvuntil(&quot;+&quot;,)</span><br><span class="line">salt=sh.recvuntil(&quot;)&quot;,).decode()[:-1]</span><br><span class="line">sh.recvuntil(&quot;== &quot;,)</span><br><span class="line">encode=sh.recvuntil(&quot;\n&quot;,).decode()[:-1]</span><br><span class="line">data=sha_256code(encode,salt)</span><br><span class="line">sh.sendline(data)</span><br><span class="line">for ri in range(188):</span><br><span class="line">    print(ri)</span><br><span class="line">    sh.recvuntil(&quot;the n1= &quot;)</span><br><span class="line">    num[0] = eval(sh.recvuntil(&quot;,&quot;).decode()[:-1].strip())</span><br><span class="line">    sh.recvuntil(&quot;n2 = &quot;)</span><br><span class="line">    num[1] = eval(sh.recvuntil(&quot;,&quot;).decode()[:-1].strip())</span><br><span class="line">    sh.recvuntil(&quot;n3 = &quot;)</span><br><span class="line">    num[2] = eval(sh.recvuntil(&quot; th&quot;).decode()[:-2].strip())</span><br><span class="line">    sh.recvuntil(&quot;\n&quot;)</span><br><span class="line"></span><br><span class="line">    num.sort(reverse=True)</span><br><span class="line">    # print(num)</span><br><span class="line"></span><br><span class="line">    if type(num[0]) == float or type(num[1]) == float or type(num[2]) == float :</span><br><span class="line">        intList=[]</span><br><span class="line">        floatList=[]</span><br><span class="line">        for i in num:</span><br><span class="line">            if type(i)==int:</span><br><span class="line">                # int_test=int(i)</span><br><span class="line">                intList.append(i)</span><br><span class="line">            else:</span><br><span class="line">                floatList.append(i)</span><br><span class="line">        if floatList[0] &gt; 1.0:</span><br><span class="line">            intList[0],intList[1] = intList[1],intList[0]</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(intList[1]))</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(&#x27;/&#x27;)</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(intList[0]))</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(floatList[0]))</span><br><span class="line">    else:</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(num[0]))</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(&#x27;-&#x27;)</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(num[1]))</span><br><span class="line">        sh.recvuntil(&quot;\n&quot;)</span><br><span class="line">        sh.sendline(str(num[2]))</span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:xy_404@163.com">鑫缘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://websec.space/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/">http://websec.space/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://websec.space/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://websec.space" target="_blank">Xinyuan's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/wp/">wp</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/fb973263055449909f79fba5cdd8b288.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/"><img class="next-cover" src="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">红日靶场(vulnstack二)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/07/Web%E5%87%BA%E9%A2%98%E8%A7%84%E8%8C%83%E8%A7%81%E9%99%84%E4%BB%B6/" title="Web(php)出题规范见附件"><img class="cover" src="https://img-blog.csdnimg.cn/d3672ed1fa0f41a88ce65f76e5a8b8f1.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-07</div><div class="title">Web(php)出题规范见附件</div></div></a></div><div><a href="/2022/04/01/%5Bsuctf%20ezpop%5D/" title="suctf"><img class="cover" src="https://img-blog.csdnimg.cn/5702cec52f544c4fa64c33ee3cb64ba2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-01</div><div class="title">suctf</div></div></a></div><div><a href="/2022/02/14/%5BVNCTF%20InterestingPHP%5D/" title="VNCTF InterestingPHP"><img class="cover" src="https://img-blog.csdnimg.cn/0e66e69620104cfea708f0b39707b17d.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-14</div><div class="title">VNCTF InterestingPHP</div></div></a></div><div><a href="/2022/03/15/ctfshow%20java/" title="ctfshow java"><img class="cover" src="https://img-blog.csdnimg.cn/ceb30b7e1c3d4d65b36623ae98514ea5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-15</div><div class="title">ctfshow java</div></div></a></div><div><a href="/2022/06/23/ciscn%E5%8D%8E%E4%B8%9C%E5%8C%97/" title="CISCN华东北赛区wp"><img class="cover" src="https://img-blog.csdnimg.cn/9d9b44555d1f48d090c2f62f12d26bf8.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-23</div><div class="title">CISCN华东北赛区wp</div></div></a></div><div><a href="/2022/03/12/ctfshow%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="ctfshow反序列化"><img class="cover" src="https://img-blog.csdnimg.cn/9164d2cb2f204f6cba75611a0dc18c68.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-12</div><div class="title">ctfshow反序列化</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫缘</div><div class="author-info__description">穹镜SkyMirror 成员，安全方向爱好者</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xinyuan-404"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xinyuan-404" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xy_404@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BE%E5%8A%9E%E4%B8%80%E5%9C%BACTF%E6%AF%94%E8%B5%9B"><span class="toc-number">1.</span> <span class="toc-text">举办一场CTF比赛</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">2.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#what-is-fuck"><span class="toc-number">2.1.</span> <span class="toc-text">what_is_fuck</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Crypto"><span class="toc-number">3.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#24-o%E2%80%99clock"><span class="toc-number">3.1.</span> <span class="toc-text">24 o’clock</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/" title="举办一场CTF比赛"><img src="https://img-blog.csdnimg.cn/fb973263055449909f79fba5cdd8b288.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="举办一场CTF比赛"/></a><div class="content"><a class="title" href="/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/" title="举办一场CTF比赛">举办一场CTF比赛</a><time datetime="2022-11-08T16:00:00.000Z" title="发表于 2022-11-09 00:00:00">2022-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/" title="红日靶场(vulnstack二)"><img src="https://img-blog.csdnimg.cn/3d5a1cc8076c43d99d41fe79431e92d3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日靶场(vulnstack二)"/></a><div class="content"><a class="title" href="/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/" title="红日靶场(vulnstack二)">红日靶场(vulnstack二)</a><time datetime="2022-10-24T16:00:00.000Z" title="发表于 2022-10-25 00:00:00">2022-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/" title="红日靶场(vulnstack一)"><img src="https://img-blog.csdnimg.cn/e39a99e6d0b543c3a2e2f5c70f5148b6.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红日靶场(vulnstack一)"/></a><div class="content"><a class="title" href="/2022/10/12/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%B8%80)/" title="红日靶场(vulnstack一)">红日靶场(vulnstack一)</a><time datetime="2022-10-11T16:00:00.000Z" title="发表于 2022-10-12 00:00:00">2022-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/10/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9Cwp/" title="春秋云镜wp day1"><img src="https://img-blog.csdnimg.cn/7b3a22bbfc4f44768b41a28106f9286a.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云镜wp day1"/></a><div class="content"><a class="title" href="/2022/10/10/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9Cwp/" title="春秋云镜wp day1">春秋云镜wp day1</a><time datetime="2022-10-09T16:00:00.000Z" title="发表于 2022-10-10 00:00:00">2022-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Web%E5%87%BA%E9%A2%98%E8%A7%84%E8%8C%83%E8%A7%81%E9%99%84%E4%BB%B6/" title="Web(php)出题规范见附件"><img src="https://img-blog.csdnimg.cn/d3672ed1fa0f41a88ce65f76e5a8b8f1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web(php)出题规范见附件"/></a><div class="content"><a class="title" href="/2022/10/07/Web%E5%87%BA%E9%A2%98%E8%A7%84%E8%8C%83%E8%A7%81%E9%99%84%E4%BB%B6/" title="Web(php)出题规范见附件">Web(php)出题规范见附件</a><time datetime="2022-10-06T16:00:00.000Z" title="发表于 2022-10-07 00:00:00">2022-10-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 鑫缘</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '4d4ce5b3f76f792bdfeb',
+      clientSecret: '8ac446a390aaa101275b309e475ee975a3e56751',
+      repo: 'blog',
+      owner: 'xinyuan-404',
+      admin: ['xinyuan-404'],
+      id: 'b646b64306b9bdfaabd502e0668444a4',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

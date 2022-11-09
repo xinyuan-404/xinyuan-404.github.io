@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://websec.space/2022/11/09/%E6%A0%A1%E8%B5%9B%E5%87%BA%E9%A2%98/</loc>
+    
+    <lastmod>2022-11-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://websec.space/2022/10/25/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA(vulnstack%E4%BA%8C)/</loc>
     
     <lastmod>2022-10-25</lastmod>
@@ -382,7 +389,7 @@
 
   <url>
     <loc>http://websec.space/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -390,56 +397,56 @@
   
   <url>
     <loc>http://websec.space/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/java%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/wp/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E9%97%B2%E8%81%8A/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/python/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -448,56 +455,56 @@
   
   <url>
     <loc>http://websec.space/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/java%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/wp/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E9%97%B2%E8%81%8A/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/python/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://websec.space/categories/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
